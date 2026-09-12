@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>Kniffel</title>
+<meta name="theme-color" content="#14161b">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Kniffel">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiS25pZmZlbCIsInNob3J0X25hbWUiOiJLbmlmZmVsIiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJzdGFydF91cmwiOiIuIiwiYmFja2dyb3VuZF9jb2xvciI6IiMxNDE2MWIiLCJ0aGVtZV9jb2xvciI6IiMxNDE2MWIiLCJpY29ucyI6W3sic3JjIjoiZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFNQUFBQURBQ0FZQUFBQlMzR3dIQUFBRUMwbEVRVlI0MnUzZHdVMERRUkJFVWNlQnhJMERCODVjQ1pxa3lBSkVBaUNFYlhYUGY1WXFnSm10aDdCM3AvZHlXZlI1ZUh6NmxCMjUrQ2kzUUtMd0FvVFNTeHFEQ3lwSkNDNmdKQ0c0WUpLRTRBSkpGb0tMSWxrRUxvWWtFYmdBa29WZzB5V0x3R1pMRm9GTmxpd0NteXRaQkRaVjBnaHNxR1FCMkV6SklyQ0pra1ZnOHlTTndNWkpGb0JOa3pRQ0d5WlpBRFpMMGdoc2xHUUIyQ1JKSTdCQmtnVmdjeVNOd01ZSUFDSkZBRFpGMGdoT1c5enp5NnRjT1FBb3ZCd0VZajBBSllUaEtnQVVYNm9RMWdGUU1naVNBQlFMaEN3QVpZSWdDMENKSU1nQ1VCNElzZ0NVQm9Jc0FHV0JJQXRBU1NDNEt3Qi8vUVVBNVpjb2dvdnlTeGtCQUFLQThrc1ZBUUFDQUFBQ2dQSkxFRUVTd01mNzI2ODVzV2hUMXczQWtJdC9Lb1RwYXdkZ2FBRzJROWl5N2l5QURRWFlpbURiMmdFWVhvQk5DRGF1SFlBbEpaaU9ZT3U2QVZoU2dqS0FXNjRkZ0NVRm1JeGc4OW9CVUFJQUFOaFRnbWtJdHE4YmdHVWxLQU80eGRvQlVBSUFBQUFBQUFEV2xHQUtnaFBXRFlBaUFBQ0FJZ0FBZ084QXZnTUFBQUFBQUFBQUFBRHVCTHNURElCbmdUd0xCTUNrSWxRQmVCd2FBT2NCQUhBazBwRklBQnlLZHlnZWdNSklsUEpZbE5OSG94d1A0QnBsS0E3RnV2ZTZBUmhZaU5wWXhPSjR4QnlBbjRwUkdrZzdiZDBBaUFuUkFBZ0FBS1QrL1NpTVpRY0FnT3hvZGdBQXlQNEVDMEFjUVBVdU5BQUFaSjlEQWdDQTdKT29BQUFBQUFCdEFOWERPQUFBa0QyUERBQUFBQUFBQUFBQVpBRlV4eklDQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBRHVBeWcvQUFBQUFBQUFBQURnYVZEbEI4QjVBT1VIQUFBQUFIQW1XUGtCZ01CVUNBQkFNQmNJQUFoTWhnUEFiRkN6UVFFUUFBQVFBQUR3aGhodmlBSEFPOEs4SXd3QVAwV2V2RzRBaHQrTUt0K0lBOENiNHIwcEhvQmRBTW9QbzIxY093Q0xuc2t2bjBjQUFJQ3hDRGF2RzRCbHh4TExSeklCQUdBY2d1M3JCbURoYko3eVhDSUFBQUFBQUFBQUFDQUxZQXFDRTlZTmdDSUFBSUFpQUFDQTd3QytBd0FBQUFBQUFBQUFBTzRFdXhNTWdHZUJQQXNFQUFBQUFPQThnUE1BQUJoUmZ0cTZBWEFzMEpGSUFCeUtkeWcrQkdEVGFKVHFXSlNUUjZKa0FQeW5ET1gzRTV3K0ZDc0Y0SytGcUw2am9EUVdNUXRBVElZZUF3QUM1UWRBRVFBQVFBQ0lBb0JBK1FGUUNBREtBQ0JRL2p3QUNKVC83Z0MrUHdBSUFCQklyUHhqQVVDZy9Ia0FFQ2gvSGdBRXlwOEhBSUh5NXdGQW9QeDVBQ0FvUGdBUUtQOHRBR3hFQUlMaVg2MzhXd0hBb1BRQUFLSHdBSWo4RXdBRWtpNC9BQUtBalpFeUFBZ2tYWDRBSkE4QUFrbVhId0RKQTRCQTB1VUhRUElBSUpCMCtRR1FQQUFJSkYxK0NDUmZmZ2drWDM0QUpBOEFBa21YSHdMSmx4OEN5WmNmQXNtWEh3TEpseDhFeVJjZkFsRitDRVQ1UVJERkIwRVVId1JSZkJCRThXRVFwUWRDUmhmK0N5RXdJUDllbCtvSEFBQUFBRWxGVGtTdVFtQ0MiLCJzaXplcyI6IjE5MngxOTIiLCJ0eXBlIjoiaW1hZ2UvcG5nIn0seyJzcmMiOiJkYXRhOmltYWdlL3BuZztiYXNlNjQsaVZCT1J3MEtHZ29BQUFBTlNVaEVVZ0FBQWdBQUFBSUFDQVlBQUFEMGVOVDZBQUFRZGtsRVFWUjQydTNjc2EwaVVSQUFRZUpBd3NQQXdNWWxhSklpQ3hBUklHQzFZcWZyU1pYQU1uK21uYnZkenR2ODJ4K09ENEMxMmI2ZTU0Z0RpQWZQYytnQmhJSG4yQU1nQ2p3SEh3QkI0RG42QUlnQno5RUhRQXg0amo0QVlzQno5QUVRQTU3REQ0QVE4QngrQUlTQTUvQURJQVE4aHg4QUllRHdHM29BaElERER3QkN3T0VIUUFoNERqOEFRc0J6L0FFUUFaN0RENEFROEJ4L0FFU0E1L0FESUFROHh4OEFFZUE1L0FBSUFjL3hCMEFFZUk0L0FDTEE0VGRZQUFnQnh4OEFSSURqRHdBaXdQRUhBQkhnK0FPQUNIRDhBVUFFT1A0QUlBSWNmZ0FRQW80L0FJZ0F4eDhBUklBQUFBQUI0UGdEZ0Fody9BRkFCRGorQUpDTkFEOHlBTVFpd0k4TEFMRUk4S01DUUN3Qy9KZ0FFSXdBUHlRQXhBTEFqd2dBc1FqdzR3RkFMQUw4YUFBUWpBQS9HQURFQXNDUEJRQ3hDUEFqQVVBd0F2eEFBQkFMQUQ4T0FNUWl3SThDQU1FSThJTUFRQ3dBL0JnQUVJc0FQd0lBQkNQQUR3QUFzUUR3OFFFZ0dBRStQQURFQXNCSEI0QmdCUGpnQUJBTEFCOGJBSUlSNEVNRFFDd0FmR1FBQ0VhQUR3d0FzUUR3Y1FFZ0dBRStMQURFQXNCSEJZQmdCUGlnQUJBTEFCOFRBSUlSNEVNQ1FDd0FmRVFBQ0VhQUR3Z0FBZ0FBbUI0QVBoNEFCQ1BBaHdNQUFRQUFUQThBSHcwQWdoSGdnd0dBQUFBQXBnZUFqd1VBd1Fqd29RQkFBTUJYVHVjTHNBRDdoRlVDd0VmQ2NRZVJRREFDZkNBY2V4QUZDQUFjZkVBUUlBQnc5QUV4d0xnQThIRWNma0FJRUl3QUg4YlJCOFFBQWdDSEh4QUNDQUFjZmtBSUlBQncrQUVod1BZRHdFZHgrQUdFUURBQ2ZCREhIMEFFQ0FBY2ZnQWhJQUJ3L0FGRWdBREE0UWNRQWdJQXh4OFFBV3d3QUh3TXh4OUFCQVFqd0lkdy9BRkVnQURBOFFjUUFRSUFoeDlBQ0FnQUhIOEFFU0FBY1B3QlJJQUF3UEVIRUFFQ0FNY2ZRQVFJQUFRQUlBQVFBRGorZ0FoQUFEaitsZ01nQWhBQWpqK0FDRUFBT1A0QUlnQUI0UGdEaUFBRWdBQUFFQUI4RWdBK2d1TVBJQUlFQUk0L2dBZ1FBQWdBQUFFZ0FIRDhBVVNBQU1EeEJ4QUJBZ0FCQUNBQUJBQ09QNEFJRUFENHd3WVFBQUxBOFFkQUJBZ0FBUUNBQUJBQWpqK0FDSEEvQklBQUFCQUFDQURISDBBRUlBQUVBSUFBUUFBSUFBQUJnQUJ3L0FGRUFBSkFBQUFJQUFTQTR3OGdBZ1FBQWdCQUFBZ0FCQUNBQUJBQU9QNEFJa0FBSUFBQUJJQUFRQUFzNFg2Ny9zeDN4SHdLQUFTQUFJZ3NWUXNYc3lrQUVBQ092OFZxNFdJMlJRQUNRQUJZcnBZdFpsTUFJQUFFUUhxNVdyYVlUUUdBQUJBQTRlVnEwV0krQllBQThCRUVRSGk1V3JSbTAyd0tBQUdBNHg5ZXNCYXQyVFNiSWtBQUlBQ0N5OVd5Tlp0bVV3QUlBQVJBZk1GYXRHYlRiQW9BQVlBQWlDNVlpOVpzbWswQklBQVFBTkVGYTlHYVRiTXBBQVFBQWlDNllFV0EyVFNiQWtBQUlBQ2lDMVlFbUUyektRQUVBQUxBa3NWc21rMEJJQURvQmtCdHdZb0FzMmsyQllBQXdQR1BMbGdSWURiTnBnZ1FBR1FEb0w1Z0JZRDVOSjhDUUFBZ0FDeFp6S2JaRkFBQ1FBQllzQll0WnROc0NnQUJJQUFzV1VzV3MyazJCWUFBRUFBV3JFV0wyVFNiQWtBQUNBQkwxcExGYkpwTkFTQUFCSUFGYTlGaU5zMm1BQkFBQXNDU3RXUXhtMlpUQUFnQUFXREpXcktZVGJNcEFBU0FBTEJnTFZyTVpuNDIzUjBCSUFBc1dVdFdBQ0FBRUFBQ3dKSzFaQVVBQWdBQklBQXNXRXRXQUNBQUVBQUN3SUsxWk0ybTJSUUFDQUFCWU1sYXNtYlRiQW9BQVlBQXNHUXRXYk5wTmdXQUFFQUFXSnlXck5rMG13SkFBQ0FBRUFCbTAyd0tBQUdBQUVBQW1FMnpLUUFFQUFJQUFXQTJ6YVlBRUFBQ3dKSzFaREdiWmxNQUNBQUJZTWxhc3BoTnN5a0FCSUFBc0dRdFdjeW0yUlFBQWtBQVdMS1dMR2JUYkFvQUFTQUFMRmxMRnJOcE5nV0FBQkFBbHF3bGk5azBtd0pBQUFnQVM5YVN4V3lhVFFFZ0FBU0FKV3ZKQ2dBRUFBSkFBRml5bHF3QVFBQWdBQVNBUld2QmlnQ20vdjd1amdBUUFKYXNKU3NBRUFBSUFBRmd5VnF5QWdBQmdBQVFBSmFzSldzMnphWUFRQUFJQUl2V2dqV2JabE1BSUFBRWdDVnJ5WnBOc3lrQUJBQUN3SksxWU0ybitSUUFBZ0FCWU1rS0FMTnBOZ1dBQUVBQVdLZ0N3R3lhVFFFZ0FNZ0ZnRVhyK0p0TnN5a0FCQUFDQUFGZ05zMm1BQkFBVkFMQW9uWDh6YWJaRkFBQ2dHZ0FXTFNPdjlrMG13SkFBQ0FBTEZuTXB0a1VBQUpBQUZpMEZpeG0wMndLQUFFZ0FDeGFDeGF6YVRZRmdBQVFBSmFzQll2NU5KOENRQUFJQUV2V2dzVnNtazBCSUFBRWdFVnJ3V0kyemFZQUVBQUN3S0sxWURHYlpsTUFDQUFCWU5GYXNKaE5zeWtBQklBQXNHZ3RWOHluQUVBQUNBQ0wxbkxGYkFvQUJJQUFzR2d0V015bUFFQUFDQURMMW5MRmJBb0FCSUFBc0dndFdNeW1BRUFBQ0lEcXN2VmJZRFlGZ0FEd0VRUkFaTm42N3BoUEFZQUFFQUNoWmVzYll6WUZBQUpBQUFTV3JtK0kyUlFBQ0FBQkFDQUFFQUFDQUVBQUlBQUVBSUFBRUFBSUFBQUJJQUFRQUFBQ1FBQWdBQUFFZ0FCQUFBQUlBQUdBUDBnbS9SdDIzd3NCSUFBUUFQZ2Y3RVFCQWtBQUlBRHcvOWVMQVFTQUFFQUFrRHI4UWdBQklBQVFBSVFQdnhCQUFBZ0FCQURod3k4RUVBQUNRQUQ0Z3lSOCtJVUFBa0FBQ0FDSUgzOFJnQUFRQUFJQW9zZGZCQ0FBQklBQWdPRGhGd0lJQUFFZ0FDQisvRVVBQWtBQUNBQ0lIbjhSZ0FBUUFBSUFvc2RmQkNBQUJJQUFnT2p4RndFSUFBRWdBRUFBZ0FBUUFBSUF4Ny9HNzQ0QUVBQUNBTWMveXUrUEFCQUFBZ0RIWHdTQUFCQUFBZ0FCSUFCQUFBZ0FBWURqTHdKQUFBZ0FBWUFBRUFBSUFBU0FBTUR4RndFSUFBU0FBRUFBQ0FBRUFBSkFBT0Q0aXdBRUFBSkFBQ0FBQkFBQ0FBRWdBSEQ4UlFBQ1FBQWdBQkFBQWdBQklBQVFBQWdBQVlBQUVBQUlBQngvRVlBQUVBQUlBQVNBQUVBQUNBQUI0QThTQVNBQUVBQUNRQUNBQUJBQUNBQUJJQURBWVJjQUNBQUJJQUJ3L0JFQkNBQUJJQUFRQUFnQUJJQUFFQUFJQU13TkFrQUFDQUFFZ0FBQUFTQUFCQUFDUUFBZ0FOd2RBU0FBRUFBQ0FBR0FBQkFBQ0FBQmdBQkFBQWdBQklBQVFBQWdBQVFBQWtBQUlBQVFBQUlBQVNBQUVBQUNBQUdBQUJBQUNBQUJnQUJBQkRqK0NBQUJnQUJBQUFnQUJJQUFRQUFnQUFRQUFrQUE0QThTQVNBQUVBQUNRQUNBQUJBQUNBQUJJQUJBQkRqK0NBQUJJQUFRQUFnQUJJQUFFQUFJQUFRQUFrQUFDQUJFZ09NUEFrQUFDQUFFZ0FBQUFTQUFCQUFpd1BFSEFTQUFCQUFDUUFBZ0FCQUFBZ0FSNFBnakFCQUFBZ0FCSUFBUUFBZ0FBWUFJY1B3UkFBZ0FBWUFBRUFBSUFBR0FBRUFFT1A0SUFBR0FBRUFFT1A0SUFBR0FBRUFFT1A0SUFBR0FBRUFBQ0FBRWdBQkFBQ0FDSEg4RWdBQVFBQ0FDSEg4RWdBQVFBQ0FDSEg4RWdBQVFBQkNNQUw4bkFrQUFDQUFJaFlEZkR3RWdBQVFBeENMQTc0WUFFQUFDQUdJUjRQZENBQWdBQVFDaEVQRDdJQUFFZ0FDQVVBajRQUkFBQWtBQVFDZ0VmSDhFZ0FBUUFQNGdDWVdBNzQwQUVBQUlBQ0l4NExzaUFBUUFBb0RoVWVCN0lRQUVBQUlBUUFBSUFBUUFnQUFRQUFnQUFBRWdBQVFBQUFKQUFBZ0FBQVNBQUJBQUFBZ0FBU0FBQUJBQUFrQUFzTlIvWXVNYllqWUZBQUpBQVBndmJIMWp6S1lBUUFBSWdPTC9XMi9aWWo0RkFBSkFBQVFYcTJXTDJSUUFDQUFCRUYrdWxpMW1Vd0FnQUFSQWZNRmF0SmhOQVNBQUVBREI1V3JabWsyektRQUVBQUlndm1BdFdyTnBOZ1dBQUVBQUJKZXJSV3MremFjQUVBQUlnUEJ5dFdqTnB0a1VBQUlBQVJCZXNCYXQyVFNiQWtBQUlBQ2lDOWFpTlp0bVV3QUlBQVJBZE1GYXRHYlRiQW9BQVlBQWlDNVlBV0EremFjQUVBQUlnT2lDRlFGbTAyd0tBQUdBQUFndVdCRmdOczJtQUJBQTVBT2d1bUJGZ05rMG13SkFBQ0FBTEZuTXB0a1VBQUtBb3dWcjBXSTJ6YVlBRUFBQ3dJSzFhREdiWmxNQUNBQUJZTWxhc3BoTnN5a0FCSUFBc0dBdFdzeW0yUlFBQWtBQVdMS1dMR2JUYkFvQUFTQUFMRmhMRnZOcFBnV0FBQkFBRnF3bGk5azBtd0pBQUFnQVM5YVN4V3lhVFFFZ0FBU0FCV3ZST3Y0a1o5UGRFUUFDd0pLMVpBVUFBZ0FCSUFBc1dVdFdBQ0FBRUFBQ3dKSzFaTTJtMlJRQUNBQUJZTUZhdEdiVGJBb0FCSUFBc0dRdFdiTnBOZ1dBQUVBQVdMS1dyTmswbXdKQUFDQUFMRTVMMW15YVRRRWdBQkFBQ0FDemFUWUZnQUJBQUNBQXpLYlpGQUFDQUFHQUFEQ2JabE1BQ0FBQllNbGFzcGhOc3lrQUJJQUFzR1F0V2N5bTJSUUFBa0FBV0xLV0xHYlRiQW9BQVNBQUxGbExGck5wTmdXQUFCQUFscXdsaTlrMG13SkFBQWdBUzlhU3hXeWFUUUVnQUFTQUpXdkpZamJOcGdBUUFBTEFrclZrQlFBQ0FBRWdBQ3haUzFZQUlBQVFBQUxBa3JWZ1JRQUNBQUVnQUN4WkM5WnNtazBCZ0FBUUFKYXNKV3MyemFZQUVBQUlBRXZXa2pXYlpsTUFDQUFFZ0VWcndacE5zeWtBQkFBQ0FBRmdOczJtQUJBQUNBQUVnTmswbXdKQUFEQStBQ3hheDk5c21rMEJJQUFRQUFnQXMyazJCWUFBb0JJQUZxM2piemJOcGdBUUFBZ0FCSURaTkpzQ1FBQlFDUUNMMXZFM20yWlRBQWdBQklBRmkvazBud0pBQUdESldyQ1lUYk1wQUFTQUNMQm9MVmpNcHRsMC9BV0FBTEJvTFZqTXB0a1VBQUpBQUZpeWxpeG0wMndLQUFFZ0FDeGFDeGF6YVRZRmdBQVFBQmF0Qll2Wk5Kc0NRQUFJQUl2V2dzVnNtazBCSUFBRWdFVnJ3V0kyNDcrbmV5TUFCSUJGYThGaU5nVUFBa0FBV0xhV0syWlRBQ0FBUklCRmE4RmlOaDEvQklBQXNHZ3RWOHluQUVBQUNBQ0wxbkxGYkFvQUFZQUFxQzFidndWbVV3QUlBQjlCQUlTV3JXK1AyUlFBQ0FBUkVGbTR2akZtMC9GSEFBaUF3TUwxSFRHZkFnQUJJQUFBQkFBQ1FBQUFDQUFFZ0FnQWNQd0ZBQUlBUUFBSUFBUUFnQUFRQUlnQUFNZGZBQ0FBQUFTQUFFQUVBRGorQWdBQkFDQUFCSUFBQUVBQUNBQVJBSURqTHdBRUFBQUNRQUNJQUFESDM5MFFBQUlBUUFBZ0FFUUFnT09QQUJBQUFBSUFBU0FDQUJ4L0JJQUFBQkFBQ0FBUkFPRDRJd0JFQUlEakx3QVFBQUFDUUFBZ0FnQWMvOUVCOEhvK2hBZ0FjUHdGQUFJQVFBQUlBRVFBZ09NdkFCQUJBSTYvQUVBRUFEaitBZ0FSQU9ENEN3QkVBSURqTHdBUUFJQUFRQUFnQWdESEh3R0FDQUFjZndRQUlnQncvQkVBSWdEQThVY0FDQUVBaHg4QklBSUFISDhFZ0FnQWNQeDVHd0FpUUFRQU9QN0I0eThBUkFDQTR5OEFFQUlBRHI4QVFBUUFPUDRDQUNFQU9Qd0lBRVFBNFBpejRRQVFBVUlBd09FUEhuOEJJQVFBSEg0QmdCQUFISDRFQUVJQWNQZ1JBSWdCd05GblRnQ0lBQ0VBT1B3RWo3OEFRQXlBbzQ4QUFFRUFEajRDQUVRQk9QYU1EUUFSZ0VnQXg1M2c4UmNBQUNBQUFJQktBSWdBQUFnZWZ3RUFBQUlBQUtnRWdBZ0FnT0R4RndBQUlBQUFnRW9BaUFBQUNCNS9BUUFBQWdBQXFBU0FDQUNBNFBFWEFBQVFEUUFSQUFEQjR5OEFBQ0FhQUNJQUFJTEhYd0FBUURRQVJBQUFCSSsvQUFDQWFBQ0lBQUFJSG44QkFBRFJBQkFCQUJBOC9nSUFBS0lCSUFJQUlIajhCUUFBUkFOQUJBQkE4UGdMQUFDSUJvQUlBSURnOFJjQkFCQTkvZ0lBQUtJQklBSUFJSGo4UlFBQVJJKy9BQUNBYUFDSUFBQUlIbjhSQUFEUjR5OEFBQ0FhQUNJQUFJTEhYd1FBUVBUNGl3QUFpQjUvQVFBQTBRQVFBUUFRUFA0aUFBQ2l4MThFQUVEMCtJc0FBSWdlZnhFQUFOSGpMd0lBSUhyOFJRQUFqbi80R1FBQUJJQUlBQURIWHdRQWdPTXZCQURBNFJjQkFPRDRpd0FBY1B4RkFBQTQvaUlBQUJ4L0VRQUFqcjhJQUFESFh3Z0FnTU12QWdEQThSY0JBT0Q0Q3dFQUhINVBCQURnK0h0Q0FBQ0gzeE1CQURqK25oQUF3T0gzUkFBQWpyOG5CQUJ3K0QwaEFJREQ3d2tCQUJ4K1R3Z0E0UEI3UWdBQWg5OFRBZ0E0L0o0UUFIRDRQVThJQURqOG5pY0dBQng5enhNREFJNis1NGtCQUVmZjg4UUFnS1B2ZVlJQXdNSDNQRkVBNE5oN25qQUFjT2ovNUQwQkw4eGF1ZlkyNzE0QUFBQUFTVVZPUks1Q1lJST0iLCJzaXplcyI6IjUxMng1MTIiLCJ0eXBlIjoiaW1hZ2UvcG5nIn1dfQ==">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAEC0lEQVR42u3dwU0DQRBEUceBxI0DB85cCZqkyAJEAiCEbXXPf5YqgJmth7B3p/dyWfR5eHz6lB25+Ci3QKLwAoTSSxqDCypJCC6gJCG4YJKE4AJJFoKLIlkELoYkEbgAkoVg0yWLwGZLFoFNliwCmytZBDZV0ghsqGQB2EzJIrCJkkVg8ySNwMZJFoBNkzQCGyZZADZL0ghslGQB2CRJI7BBkgVgcySNwMYIACJFADZF0ghOW9zzy6tcOQAovBwEYj0AJYThKgAUX6oQ1gFQMgiSABQLhCwAZYIgC0CJIMgCUB4IsgCUBoIsAGWBIAtASSC4KwB//QUA5ZcogovySxkBAAKA8ksVAQACAAACgPJLEEESwMf72685sWhT1w3AkIt/KoTpawdgaAG2Q9iy7iyADQXYimDb2gEYXoBNCDauHYAlJZiOYOu6AVhSgjKAW64dgCUFmIxg89oBUAIAANhTgmkItq8bgGUlKAO4xdoBUAIAAAAAAADWlGAKghPWDYAiAACAIgAAgO8AvgMAAAAAAAAAAADuBLsTDIBngTwLBMCkIlQBeBwaAOcBAHAk0pFIAByKdygegMJIlPJYlNNHoxwP4BplKA7Fuve6ARhYiNpYxOJ4xByAn4pRGkg7bd0AiAnRAAgAAKT+/SiMZQcAgOxodgAAyP4EC0AcQPUuNAAAZJ9DAgCA7JOoAAAAAABtANXDOAAAkD2PDAAAAAAAAAAAZAFUxzICAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADuAyg/AAAAAAAAAADgaVDlB8B5AOUHAAAAAHAmWPkBgMBUCABAMBcIAAhMhgPAbFCzQQEQAAAQAADwhhhviAHAO8K8IwwAP0WevG4Aht+MKt+IA8Cb4r0pHoBdAMoPo21cOwCLnskvn0cAAICxCDavG4BlxxLLRzIBAGAcgu3rBmDhbJ7yXCIAAAAAAAAAACALYAqCE9YNgCIAAIAiAACA7wC+AwAAAAAAAAAAAO4EuxMMgGeBPAsEAAAAAOA8gPMAABhRftq6AXAs0JFIAByKdyg+BGDTaJTqWJSTR6JkAPynDOX3E5w+FCsF4K+FqL6joDQWMQtATIYeAwAC5QdAEQAAQACIAoBA+QFQCADKACBQ/jwACJT/7gC+PwAIABBIrPxjAUCg/HkAECh/HgAEyp8HAIHy5wFAoPx5ACAoPgAQKP8tAGxEAILiX638WwHAoPQAAKHwAIj8EwAEki4/AAKAjZEyAAgkXX4AJA8AAkmXHwDJA4BA0uUHQPIAIJB0+QGQPAAIJF1+CCRffggkX34AJA8AAkmXHwLJlx8CyZcfAsmXHwLJlx8EyRcfAlF+CET5QRDFB0EUHwRRfBBE8WEQpQdCRhf+CyEwIP9el+oHAAAAAElFTkSuQmCC">
+<style>
+:root{
+  --bg:#f4f2ec; --surface:#ffffff; --surface-2:#eceae2; --text:#1b1b1a; --muted:#6b6a63;
+  --accent:#b5860f; --accent-text:#1b1b1a; --active-row:#fff2cf; --border:transparent;
+  --danger:#a3372c; --good:#3a7d4f; --shadow:0 1px 3px rgba(0,0,0,.08);
+}
+:root:not([data-theme="light"]){
+  @media (prefers-color-scheme: dark){
+    --bg:#14161b; --surface:#1e2129; --surface-2:#262a34; --text:#f2f0e8; --muted:#9aa0ac;
+    --accent:#e8b93f; --accent-text:#14161b; --active-row:#3a3018; --border:transparent;
+    --danger:#e2685a; --good:#5fbf7f; --shadow:0 1px 3px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14161b; --surface:#1e2129; --surface-2:#262a34; --text:#f2f0e8; --muted:#9aa0ac;
+  --accent:#e8b93f; --accent-text:#14161b; --active-row:#3a3018; --border:transparent;
+  --danger:#e2685a; --good:#5fbf7f; --shadow:0 1px 3px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+html,body{height:100%;}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  overscroll-behavior:none; touch-action:manipulation;
+  padding-top:env(safe-area-inset-top); padding-bottom:env(safe-area-inset-bottom);
+  padding-left:env(safe-area-inset-left); padding-right:env(safe-area-inset-right);
+  -webkit-user-select:none; user-select:none;
+}
+input, textarea{ -webkit-user-select:text; user-select:text; }
+button{font-family:inherit;}
+.font-num{ font-variant-numeric:tabular-nums; font-feature-settings:"tnum" 1; }
+#app{min-height:100vh; display:flex; flex-direction:column;}
+.top{ display:flex; align-items:center; gap:.5rem; padding:.9rem 1rem; }
+.top h1{ font-size:1.05rem; margin:0; flex:1; font-weight:700; letter-spacing:.02em;}
+.iconbtn{
+  border:none; background:var(--surface); color:var(--text); border-radius:14px;
+  width:48px; height:48px; display:flex; align-items:center; justify-content:center;
+  transition:transform .12s ease, background .12s ease;
+}
+.iconbtn:active{ transform:scale(.92); background:var(--surface-2); }
+.iconbtn svg{ width:22px; height:22px; }
+.btn{
+  border:none; border-radius:16px; padding:1rem 1.2rem; font-size:1.05rem; font-weight:600;
+  background:var(--surface); color:var(--text); display:flex; align-items:center; justify-content:center;
+  gap:.5rem; min-height:56px; transition:transform .12s ease, background .12s ease; cursor:pointer;
+}
+.btn:active{ transform:scale(.97); }
+.btn-primary{ background:var(--accent); color:var(--accent-text); }
+.btn-danger{ background:var(--danger); color:#fff; }
+.btn-ghost{ background:transparent; color:var(--muted); min-height:44px; padding:.6rem 1rem; font-weight:500;}
+.btn-block{ width:100%; }
+.stack{ display:flex; flex-direction:column; gap:.7rem; }
+.row{ display:flex; align-items:center; gap:.6rem; }
+.card{ background:var(--surface); border-radius:20px; padding:1.1rem; box-shadow:var(--shadow); }
+.muted{ color:var(--muted); }
+.scr{ flex:1; padding:0 1rem 2rem; display:flex; flex-direction:column; gap:1rem; overflow-y:auto;}
+.center-scr{ flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; padding:2rem 1.2rem;}
+.brand{ display:flex; flex-direction:column; align-items:center; gap:.3rem; margin-bottom:1rem;}
+.brand .diehero{ width:88px; height:88px; border-radius:22px; background:var(--surface); display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow);}
+.brand h1{ font-size:1.8rem; margin:.4rem 0 0; }
+.startlist{ width:100%; max-width:420px; display:flex; flex-direction:column; gap:.7rem; }
+
+/* Spielblock */
+.block-wrap{ flex:1; overflow:auto; border-radius:20px; background:var(--surface); box-shadow:var(--shadow); }
+table.block{ border-collapse:collapse; width:100%; min-width:100%; }
+table.block th, table.block td{ padding:.55rem .6rem; text-align:center; font-size:1rem; }
+table.block thead th{ position:sticky; top:0; background:var(--surface); z-index:2; padding-top:.8rem; }
+table.block td.feldname, table.block th.feldname{
+  text-align:left; position:sticky; left:0; background:var(--surface); z-index:1; min-width:118px; font-weight:600;
+}
+table.block thead th.feldname{ z-index:3; }
+table.block tr.section-gap td{ height:.5rem; padding:0; }
+.spielername{ display:flex; flex-direction:column; align-items:center; gap:.15rem; font-weight:700; }
+.spielername .em{ font-size:1.3rem; }
+th.aktiv, td.aktiv{ background:var(--active-row); }
+.zelle-btn{ width:100%; min-height:56px; border:none; background:transparent; color:var(--text); border-radius:12px; font-size:1.15rem; font-weight:700; }
+.zelle-btn:active{ background:var(--surface-2); }
+.zelle-leer{ color:var(--muted); font-weight:400; }
+.zelle-empf{ background:var(--accent); color:var(--accent-text); border-radius:12px; }
+.summen-row td{ font-weight:800; border-top:2px solid var(--surface-2); }
+.bonus-hint{ font-size:.72rem; font-weight:500; }
+.modeswitch{ display:flex; background:var(--surface-2); border-radius:14px; padding:4px; gap:4px; }
+.modeswitch button{ flex:1; border:none; background:transparent; color:var(--muted); border-radius:10px; padding:.55rem; font-weight:600; }
+.modeswitch button.aktiv{ background:var(--surface); color:var(--text); box-shadow:var(--shadow);}
+.undo-bar{ display:flex; justify-content:space-between; align-items:center; }
+
+/* Wuerfelmodus */
+.wuerfel-reihe{ display:flex; gap:.6rem; justify-content:center; }
+.wuerfel{
+  width:64px; height:64px; border-radius:18px; background:var(--surface); box-shadow:var(--shadow);
+  display:flex; align-items:center; justify-content:center; font-size:1.9rem; font-weight:800; color:var(--text);
+  border:2px solid transparent;
+}
+.wuerfel.gehalten{ border-color:var(--accent); color:var(--accent); }
+.coach-box{ background:var(--surface); border-radius:18px; padding:1rem; box-shadow:var(--shadow); }
+.coach-box.aus{ opacity:.55; }
+.chip{ display:inline-flex; align-items:center; padding:.2rem .6rem; border-radius:999px; background:var(--surface-2); font-size:.78rem; font-weight:600; }
+.werte-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:.6rem; }
+.werte-grid button{ border:none; border-radius:14px; padding:1rem .5rem; font-size:1.3rem; font-weight:800; background:var(--surface-2); color:var(--text); min-height:56px; }
+.werte-grid button:active{ transform:scale(.95); }
+
+/* Overlay / Modal */
+.overlay{ position:fixed; inset:0; background:rgba(0,0,0,.5); display:flex; align-items:flex-end; justify-content:center; z-index:50; }
+.overlay .sheet{ background:var(--bg); width:100%; max-width:480px; border-radius:24px 24px 0 0; padding:1.2rem 1.2rem calc(1.4rem + env(safe-area-inset-bottom)); max-height:88vh; overflow-y:auto; }
+.overlay.center{ align-items:center; }
+.overlay.center .sheet{ border-radius:22px; max-width:400px; }
+.field{ display:flex; flex-direction:column; gap:.35rem; }
+.field label{ font-size:.85rem; color:var(--muted); font-weight:600; }
+.field input, .field select{
+  background:var(--surface); border:none; border-radius:12px; padding:.85rem 1rem; font-size:1rem; color:var(--text);
+}
+.emoji-grid{ display:grid; grid-template-columns:repeat(6,1fr); gap:.4rem; }
+.emoji-grid button{ font-size:1.4rem; background:var(--surface); border:none; border-radius:12px; padding:.5rem 0; }
+.emoji-grid button.aktiv{ background:var(--accent); }
+.farb-grid{ display:flex; gap:.5rem; flex-wrap:wrap; }
+.farb-dot{ width:34px; height:34px; border-radius:50%; border:3px solid transparent; }
+.farb-dot.aktiv{ border-color:var(--text); }
+
+table.stat{ width:100%; border-collapse:collapse; font-size:.92rem; }
+table.stat th, table.stat td{ padding:.5rem .4rem; text-align:center; }
+table.stat th{ color:var(--muted); font-weight:600; text-align:left; }
+table.stat td:first-child, table.stat th:first-child{ text-align:left; }
+.tabs{ display:flex; gap:.4rem; overflow-x:auto; padding-bottom:.2rem; }
+.tabs button{ white-space:nowrap; border:none; background:var(--surface-2); color:var(--muted); border-radius:999px; padding:.5rem 1rem; font-weight:600; }
+.tabs button.aktiv{ background:var(--accent); color:var(--accent-text); }
+svg.chart text{ fill:var(--muted); font-size:10px; }
+.toast{ position:fixed; bottom:calc(1.2rem + env(safe-area-inset-bottom)); left:50%; transform:translateX(-50%); background:var(--text); color:var(--bg); padding:.7rem 1.1rem; border-radius:14px; font-weight:600; z-index:99; box-shadow:var(--shadow); }
+.switch{ position:relative; width:52px; height:30px; border-radius:20px; background:var(--surface-2); flex-shrink:0; }
+.switch .knob{ position:absolute; top:3px; left:3px; width:24px; height:24px; border-radius:50%; background:var(--muted); transition:transform .15s ease, background .15s ease; }
+.switch.an{ background:var(--accent); }
+.switch.an .knob{ transform:translateX(22px); background:var(--accent-text); }
+.settings-row{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:.3rem 0; }
+.spielerchip{ display:flex; align-items:center; gap:.5rem; background:var(--surface); border-radius:16px; padding:.6rem .8rem; box-shadow:var(--shadow); }
+.spielerchip .em{ font-size:1.3rem; }
+.gruppen-titel{ font-size:.82rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); font-weight:700; margin:.2rem 0 -.2rem; }
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="overlays"></div>
+<script>
+"use strict";
+
+/* =========================================================================
+   TEXTE — alle sichtbaren Zeichenketten der App
+   ========================================================================= */
+const TEXTE = {
+  appName: "Kniffel",
+  start: {
+    neuesSpiel: "Neues Spiel",
+    fortsetzen: "Spiel fortsetzen",
+    bestenliste: "Bestenliste",
+    spieler: "Spieler",
+    einstellungen: "Einstellungen",
+    unterbrochenTitel: "Unterbrochenes Spiel gefunden",
+    unterbrochenText: "Es gibt ein Spiel, das nicht zu Ende gespielt wurde. Fortsetzen?",
+    fortsetzenBtn: "Fortsetzen",
+    verwerfenBtn: "Verwerfen",
+    coachAngebotTitel: "Würfel-Coach",
+    coachAngebotText: "Die App kann dir beim Würfeln zeigen, welches Feld sich statistisch am meisten lohnt. Aktivieren?",
+    coachAn: "Ja, Coach aktivieren",
+    coachAus: "Nein, ohne Coach spielen",
+  },
+  neu: {
+    titel: "Neues Spiel",
+    spielerWaehlen: "Spieler wählen",
+    neuerSpieler: "+ Neuer Spieler",
+    regelvariante: "Regelvariante",
+    reihenfolge: "Reihenfolge",
+    starten: "Spiel starten",
+    mindestens: "Mindestens 1 Spieler wählen",
+  },
+  spieler: {
+    titel: "Spieler",
+    name: "Name",
+    farbe: "Farbe",
+    emoji: "Symbol",
+    speichern: "Speichern",
+    abbrechen: "Abbrechen",
+    loeschen: "Löschen",
+    neu: "Neuer Spieler",
+    keine: "Noch keine Spieler angelegt.",
+  },
+  feld: {
+    eins: "Einser", zwei: "Zweier", drei: "Dreier", vier: "Vierer", fuenf: "Fünfer", sechs: "Sechser",
+    zwischensumme: "Zwischensumme", bonus: "Bonus",
+    dreierpasch: "Dreierpasch", viererpasch: "Viererpasch", fullhouse: "Full House",
+    kleinestrasse: "Kleine Straße", grossestrasse: "Große Straße", kniffel: "Kniffel",
+    chance: "Chance", gesamt: "Gesamt", kniffelBonus: "Kniffel-Bonus",
+  },
+  block: {
+    schnell: "Schnell", wuerfel: "Würfel",
+    undo: "Rückgängig",
+    nochOffen: n => `noch ${n}`,
+    puffer: n => `+${n} Puffer`,
+    korrekturTitel: "Feld korrigieren",
+    korrekturText: "Neuen Wert für dieses Feld wählen, oder Eintrag löschen.",
+    eintragLoeschen: "Eintrag löschen",
+  },
+  wuerfel: {
+    wurf: n => `Wurf ${n} / 3`,
+    naechsterWurf: "Erneut gewürfelt",
+    coachAus: "Coach ist ausgeschaltet",
+    empfBehalten: "Diese behalten und neu würfeln:",
+    empfFeld: feld => `Empfehlung: ${feld}`,
+    streichenText: feld => `${feld} streichen — kostet am wenigsten`,
+    sicherBonus: feld => `${feld} — sichert den Bonus`,
+    guterWert: feld => `${feld} — bester erwarteter Endwert`,
+    eintragen: "Eintragen",
+    letzterWurf: "Letzter Wurf — jetzt eintragen",
+  },
+  ende: {
+    titel: "Spiel beendet",
+    sieger: name => `${name} gewinnt!`,
+    endstand: "Endstand",
+    highlights: "Highlights",
+    bildTeilen: "Ergebnisbild teilen",
+    bildSpeichern: "Bild speichern",
+    neuesSpiel: "Neues Spiel",
+    zumStart: "Zum Start",
+    hlKniffel: n => `${n}× Kniffel`,
+    hlBonusVerpasst: n => `Bonus um ${n} Punkte verpasst`,
+    hlBonusErreicht: "Bonus erreicht",
+    hlBestleistung: "Persönliche Bestleistung",
+  },
+  best: {
+    titel: "Bestenliste",
+    zeitraum: { monat: "Dieser Monat", jahr: "Dieses Jahr", alle: "Alle Zeiten" },
+    spiele: "Spiele", siege: "Siege", quote: "Siegquote", schnitt: "Ø Punkte", beste: "Beste",
+    vergleich: "Direktvergleich",
+    verlauf: "Punkteverlauf",
+    felder: "Felder-Statistik",
+    wuerfelstats: "Würfelmodus-Statistik",
+    keineDaten: "Noch keine abgeschlossenen Spiele.",
+    keineWuerfeldaten: "Noch keine Daten aus dem Würfelmodus.",
+    gestrichenAls: "Häufig gestrichen",
+    bonusQuote: "Bonus-Quote",
+    anzahlKniffel: "Kniffel gesamt",
+    coachVergleich: (ist, waere) => `Bei denselben Würfen wären ${waere} statt ${ist} drin gewesen.`,
+    augenHaeufigkeit: "Häufigkeit gewürfelter Augenzahlen",
+  },
+  einst: {
+    titel: "Einstellungen",
+    coach: "Würfel-Coach",
+    darstellung: "Darstellung",
+    auto: "Automatisch", hell: "Hell", dunkel: "Dunkel",
+    haptik: "Haptik",
+    daten: "Daten",
+    exportieren: "Als JSON exportieren",
+    importieren: "JSON importieren",
+    allesLoeschen: "Alles löschen",
+    allesLoeschenWarnung: "Das löscht alle Spieler, Spiele und Einstellungen unwiderruflich. Fortfahren?",
+    regelpresets: "Regel-Presets",
+    presetSpeichern: "Aktuelle Regeln als Preset speichern",
+    presetName: "Name für das Preset",
+  },
+  regeln: {
+    joker: "Kniffel-Joker",
+    jokerAus: "Aus", jokerStandard: "Standard", jokerFrei: "Freie Feldwahl",
+    zweiterBonus: "Zweiter Kniffel, Bonuspunkte",
+    fullhouseFuenf: "Full House bei fünf Gleichen zählt",
+    bonusSchwelle: "Bonus-Schwelle",
+    bonusHoehe: "Bonushöhe",
+  },
+  allg: {
+    speichern: "Speichern", abbrechen: "Abbrechen", zurueck: "Zurück", ok: "OK",
+    ja: "Ja", nein: "Nein", schliessen: "Schließen", loeschen: "Löschen",
+    amZug: name => `${name} ist am Zug`,
+  },
+};
+
+/* =========================================================================
+   LOGIK — reine Funktionen, keine Oberflaeche kennt eine Punkteregel selbst
+   ========================================================================= */
+const FELDER = [
+  { key: 'eins', typ: 'oben', wert: 1 },
+  { key: 'zwei', typ: 'oben', wert: 2 },
+  { key: 'drei', typ: 'oben', wert: 3 },
+  { key: 'vier', typ: 'oben', wert: 4 },
+  { key: 'fuenf', typ: 'oben', wert: 5 },
+  { key: 'sechs', typ: 'oben', wert: 6 },
+  { key: 'dreierpasch', typ: 'unten' },
+  { key: 'viererpasch', typ: 'unten' },
+  { key: 'fullhouse', typ: 'unten' },
+  { key: 'kleinestrasse', typ: 'unten' },
+  { key: 'grossestrasse', typ: 'unten' },
+  { key: 'kniffel', typ: 'unten' },
+  { key: 'chance', typ: 'unten' },
+];
+const OBERE_FELDER = FELDER.filter(f => f.typ === 'oben').map(f => f.key);
+const UNTERE_FELDER = FELDER.filter(f => f.typ === 'unten').map(f => f.key);
+
+const STANDARD_REGELN = {
+  kniffelJoker: 'standard',
+  zweiterKniffelBonus: 100,
+  fullHouseBeiFuenfGleichen: true,
+  bonusSchwelle: 63,
+  bonusHoehe: 35,
+};
+
+function zaehleWuerfel(wuerfel) {
+  const c = [0, 0, 0, 0, 0, 0, 0];
+  for (const w of wuerfel) c[w]++;
+  return c;
+}
+function summeWuerfel(wuerfel) { return wuerfel.reduce((a, b) => a + b, 0); }
+function istKniffelWurf(wuerfel) { return zaehleWuerfel(wuerfel).some(n => n === 5); }
+function hatFullHouseMuster(counts) { return counts.includes(3) && counts.includes(2); }
+function hatKleineStrasse(counts) {
+  const seqs = [[1, 2, 3, 4], [2, 3, 4, 5], [3, 4, 5, 6]];
+  return seqs.some(seq => seq.every(z => counts[z] >= 1));
+}
+function hatGrosseStrasse(counts) {
+  const seqs = [[1, 2, 3, 4, 5], [2, 3, 4, 5, 6]];
+  return seqs.some(seq => seq.every(z => counts[z] >= 1));
+}
+function jokerAktiv(wuerfel, karte, regeln) {
+  if (!istKniffelWurf(wuerfel)) return false;
+  if (karte.felder.kniffel !== 50) return false;
+  if (regeln.kniffelJoker === 'aus') return false;
+  return true;
+}
+function erzwungenesOberesFeld(wuerfel, karte, regeln) {
+  if (!jokerAktiv(wuerfel, karte, regeln)) return null;
+  if (regeln.kniffelJoker !== 'standard') return null;
+  const zahl = wuerfel[0];
+  const obereSchluessel = OBERE_FELDER[zahl - 1];
+  if (karte.felder[obereSchluessel] === null) return obereSchluessel;
+  return null;
+}
+function berechnePunkte(feld, wuerfel, karte, regeln) {
+  const counts = zaehleWuerfel(wuerfel);
+  const kniffel = istKniffelWurf(wuerfel);
+  const joker = jokerAktiv(wuerfel, karte, regeln);
+  const obenIndex = OBERE_FELDER.indexOf(feld);
+  if (obenIndex !== -1) { const zahl = obenIndex + 1; return counts[zahl] * zahl; }
+  switch (feld) {
+    case 'dreierpasch': return counts.some(n => n >= 3) ? summeWuerfel(wuerfel) : 0;
+    case 'viererpasch': return counts.some(n => n >= 4) ? summeWuerfel(wuerfel) : 0;
+    case 'fullhouse': {
+      if (hatFullHouseMuster(counts)) return 25;
+      if (kniffel && (regeln.fullHouseBeiFuenfGleichen || joker)) return 25;
+      return 0;
+    }
+    case 'kleinestrasse': {
+      if (hatKleineStrasse(counts)) return 30;
+      if (kniffel && joker) return 30;
+      return 0;
+    }
+    case 'grossestrasse': {
+      if (hatGrosseStrasse(counts)) return 40;
+      if (kniffel && joker) return 40;
+      return 0;
+    }
+    case 'kniffel': return kniffel ? 50 : 0;
+    case 'chance': return summeWuerfel(wuerfel);
+    default: return 0;
+  }
+}
+function kniffelBonusPunkte(wuerfel, karte, regeln) {
+  if (!istKniffelWurf(wuerfel)) return 0;
+  if (karte.felder.kniffel !== 50) return 0;
+  return regeln.zweiterKniffelBonus || 0;
+}
+function gueltigeZielfelder(wuerfel, karte, regeln) {
+  const alleOffenen = FELDER.filter(f => karte.felder[f.key] === null).map(f => f.key);
+  const zwang = erzwungenesOberesFeld(wuerfel, karte, regeln);
+  if (zwang) return [zwang];
+  if (jokerAktiv(wuerfel, karte, regeln) && regeln.kniffelJoker === 'standard') {
+    const offeneUntere = alleOffenen.filter(k => UNTERE_FELDER.includes(k));
+    if (offeneUntere.length > 0) return offeneUntere;
+    const offeneObere = alleOffenen.filter(k => OBERE_FELDER.includes(k));
+    if (offeneObere.length > 0) return offeneObere;
+  }
+  return alleOffenen;
+}
+function gueltigeWerte(feld) {
+  const obenIndex = OBERE_FELDER.indexOf(feld);
+  if (obenIndex !== -1) { const zahl = obenIndex + 1; return [0, 1, 2, 3, 4, 5].map(n => n * zahl); }
+  switch (feld) {
+    case 'dreierpasch': case 'viererpasch': case 'chance': {
+      const werte = [0]; for (let s = 5; s <= 30; s++) werte.push(s); return werte;
+    }
+    case 'fullhouse': return [0, 25];
+    case 'kleinestrasse': return [0, 30];
+    case 'grossestrasse': return [0, 40];
+    case 'kniffel': return [0, 50];
+    default: return [0];
+  }
+}
+function summeOben(karte) { return OBERE_FELDER.reduce((s, k) => s + (karte.felder[k] || 0), 0); }
+function summeUnten(karte) { return UNTERE_FELDER.reduce((s, k) => s + (karte.felder[k] || 0), 0); }
+function bonusStand(karte, regeln) {
+  regeln = regeln || STANDARD_REGELN;
+  const oben = summeOben(karte);
+  const fehlt = regeln.bonusSchwelle - oben;
+  return { oben, schwelle: regeln.bonusSchwelle, erreicht: oben >= regeln.bonusSchwelle, fehlt: Math.max(0, fehlt), puffer: fehlt < 0 ? -fehlt : 0 };
+}
+function hatBonus(karte, regeln) { return summeOben(karte) >= (regeln ? regeln.bonusSchwelle : STANDARD_REGELN.bonusSchwelle); }
+function gesamtSumme(karte, regeln) {
+  regeln = regeln || STANDARD_REGELN;
+  const oben = summeOben(karte);
+  const bonus = hatBonus(karte, regeln) ? regeln.bonusHoehe : 0;
+  const unten = summeUnten(karte);
+  const kniffelBonus = (karte.kniffelBonusAnzahl || 0) * (regeln.zweiterKniffelBonus || 0);
+  return { oben, bonus, unten, kniffelBonus, gesamt: oben + bonus + unten + kniffelBonus };
+}
+function karteIstVoll(karte) { return FELDER.every(f => karte.felder[f.key] !== null); }
+function anzahlOffenerFelder(karte) { return FELDER.filter(f => karte.felder[f.key] === null).length; }
+
+// Erwartungswert-Naeherung fuer den Wuerfel-Coach:
+// Gesamtwert(Feld) = Sofortwert + Bonus-Gewicht - Verlustgewicht.
+// Bonus-Gewicht schaetzt, wie sehr ein Eintrag hilft, die Bonus-Schwelle zu
+// erreichen (staerker, je naeher man dran ist und je weniger obere Felder
+// noch offen sind). Verlustgewicht schaetzt den Durchschnittswert, der
+// verloren geht, wenn ein eigentlich ergiebiges Feld mit schwachen Wuerfeln
+// "verbrannt" wird - gewichtet danach, wie viele Runden noch uebrig sind
+// (in der letzten Runde zaehlt nur noch der Sofortwert). Fuer den
+// Nachwurf (wurfNummer 1/2) wird der Erwartungswert jeder Behalten-Maske
+// exakt per Kombinatorik ueber alle moeglichen Wuerfe der uebrigen Wuerfel
+// berechnet (6^k Ergebnisse, k = Anzahl neu zu wuerfelnder Wuerfel) und
+// jeweils mit obigem Gesamtwert bewertet - eine vollstaendige Simulation
+// ueber alle Restkarten waere auf dem Handy unnoetig teuer.
+const DURCHSCHNITTSWERT = {
+  eins: 2.3, zwei: 4.7, drei: 7.0, vier: 9.3, fuenf: 11.7, sechs: 14.0,
+  dreierpasch: 21, viererpasch: 14, fullhouse: 18, kleinestrasse: 20,
+  grossestrasse: 14, kniffel: 3, chance: 21,
+};
+function feldWert(feld) { const i = OBERE_FELDER.indexOf(feld); return i !== -1 ? i + 1 : null; }
+function gesamtwertFuerFeld(feld, wuerfel, karte, regeln) {
+  const sofort = berechnePunkte(feld, wuerfel, karte, regeln);
+  const restRunden = anzahlOffenerFelder(karte);
+  const restGewicht = Math.max(0, (restRunden - 1) / 12);
+  let bonusGewicht = 0;
+  const zahl = feldWert(feld);
+  if (zahl !== null) {
+    const stand = bonusStand(karte, regeln);
+    if (!stand.erreicht) {
+      const offeneObere = OBERE_FELDER.filter(k => karte.felder[k] === null).length || 1;
+      const ziel = zahl * 3;
+      const anteil = Math.max(0, Math.min(1.4, sofort / ziel));
+      bonusGewicht = (regeln.bonusHoehe / offeneObere) * anteil;
+    }
+  }
+  const durchschnitt = DURCHSCHNITTSWERT[feld] || 0;
+  const verlust = Math.max(0, durchschnitt - sofort) * restGewicht * 0.5;
+  return sofort + bonusGewicht - verlust;
+}
+function bestenGesamtwert(wuerfel, karte, regeln) {
+  const ziele = gueltigeZielfelder(wuerfel, karte, regeln);
+  let max = -Infinity;
+  for (const feld of ziele) { const w = gesamtwertFuerFeld(feld, wuerfel, karte, regeln); if (w > max) max = w; }
+  return max === -Infinity ? 0 : max;
+}
+function erwartungswertFuerMaske(mask, wuerfel, karte, regeln) {
+  const behalten = wuerfel.filter((_, i) => mask[i]);
+  const anzahlNeu = 5 - behalten.length;
+  if (anzahlNeu === 0) return bestenGesamtwert(wuerfel, karte, regeln);
+  let summe = 0, anzahl = 0;
+  const kombis = Math.pow(6, anzahlNeu);
+  for (let k = 0; k < kombis; k++) {
+    const neue = []; let rest = k;
+    for (let i = 0; i < anzahlNeu; i++) { neue.push((rest % 6) + 1); rest = Math.floor(rest / 6); }
+    summe += bestenGesamtwert(behalten.concat(neue), karte, regeln);
+    anzahl++;
+  }
+  return summe / anzahl;
+}
+function besteBehalteKombination(wuerfel, karte, regeln) {
+  let beste = null;
+  for (let m = 0; m < 32; m++) {
+    const mask = [0, 1, 2, 3, 4].map(i => !!(m & (1 << i)));
+    const ev = erwartungswertFuerMaske(mask, wuerfel, karte, regeln);
+    if (!beste || ev > beste.ev) beste = { mask, ev };
+  }
+  return beste;
+}
+function empfehlung(wuerfel, karte, regeln, wurfNummer) {
+  regeln = regeln || STANDARD_REGELN;
+  const ziele = gueltigeZielfelder(wuerfel, karte, regeln);
+  if (ziele.length === 0) return null;
+  const bewertet = ziele.map(feld => ({
+    feld, sofort: berechnePunkte(feld, wuerfel, karte, regeln), gesamtwert: gesamtwertFuerFeld(feld, wuerfel, karte, regeln),
+  })).sort((a, b) => b.gesamtwert - a.gesamtwert);
+  const beste = bewertet[0];
+  const streichEmpfehlung = bewertet.every(b => b.sofort === 0);
+  const ergebnis = { feldEmpfehlung: beste.feld, sofortwert: beste.sofort, streichen: streichEmpfehlung, alle: bewertet };
+  if (wurfNummer === 1 || wurfNummer === 2) ergebnis.behalteEmpfehlung = besteBehalteKombination(wuerfel, karte, regeln);
+  return ergebnis;
+}
+
+/* =========================================================================
+   SELBSTTEST — laeuft beim Start, meldet Fehler laut in der Konsole
+   ========================================================================= */
+function selbsttest() {
+  function leereKarte() { const felder = {}; FELDER.forEach(f => felder[f.key] = null); return { felder, kniffelBonusAnzahl: 0 }; }
+  let ok = 0, fail = 0;
+  function pruefe(name, tatsaechlich, erwartet) {
+    const a = JSON.stringify(tatsaechlich), e = JSON.stringify(erwartet);
+    if (a === e) ok++; else { fail++; console.error(`SELBSTTEST FEHLER [${name}]: erwartet ${e}, bekommen ${a}`); }
+  }
+  const R = STANDARD_REGELN;
+  pruefe('einser einfach', berechnePunkte('eins', [1,1,3,4,5], leereKarte(), R), 2);
+  pruefe('zweier keine', berechnePunkte('zwei', [1,1,3,4,5], leereKarte(), R), 0);
+  pruefe('sechser drei stueck', berechnePunkte('sechs', [6,6,6,2,3], leereKarte(), R), 18);
+  pruefe('vierer voll', berechnePunkte('vier', [4,4,4,4,4], leereKarte(), R), 20);
+  pruefe('dreierpasch trifft', berechnePunkte('dreierpasch', [3,3,3,5,6], leereKarte(), R), 20);
+  pruefe('dreierpasch verfehlt', berechnePunkte('dreierpasch', [3,3,4,5,6], leereKarte(), R), 0);
+  pruefe('viererpasch trifft', berechnePunkte('viererpasch', [2,2,2,2,6], leereKarte(), R), 14);
+  pruefe('viererpasch verfehlt', berechnePunkte('viererpasch', [2,2,2,3,6], leereKarte(), R), 0);
+  pruefe('dreierpasch durch kniffel', berechnePunkte('dreierpasch', [5,5,5,5,5], leereKarte(), R), 25);
+  pruefe('full house klassisch', berechnePunkte('fullhouse', [2,2,3,3,3], leereKarte(), R), 25);
+  pruefe('full house verfehlt', berechnePunkte('fullhouse', [2,2,3,3,4], leereKarte(), R), 0);
+  {
+    const k = leereKarte();
+    pruefe('full house bei kniffel (regel an)', berechnePunkte('fullhouse', [4,4,4,4,4], k, R), 25);
+    const R2 = Object.assign({}, R, { fullHouseBeiFuenfGleichen: false });
+    pruefe('full house bei kniffel (regel aus, kein joker)', berechnePunkte('fullhouse', [4,4,4,4,4], k, R2), 0);
+  }
+  pruefe('kleine straße 1234', berechnePunkte('kleinestrasse', [1,2,3,4,4], leereKarte(), R), 30);
+  pruefe('kleine straße 3456', berechnePunkte('kleinestrasse', [3,4,5,6,1], leereKarte(), R), 30);
+  pruefe('kleine straße verfehlt', berechnePunkte('kleinestrasse', [1,2,4,5,6], leereKarte(), R), 0);
+  pruefe('große straße 12345', berechnePunkte('grossestrasse', [1,2,3,4,5], leereKarte(), R), 40);
+  pruefe('große straße 23456', berechnePunkte('grossestrasse', [2,3,4,5,6], leereKarte(), R), 40);
+  pruefe('große straße verfehlt', berechnePunkte('grossestrasse', [1,2,3,4,4], leereKarte(), R), 0);
+  pruefe('kniffel trifft', berechnePunkte('kniffel', [6,6,6,6,6], leereKarte(), R), 50);
+  pruefe('kniffel verfehlt', berechnePunkte('kniffel', [6,6,6,6,5], leereKarte(), R), 0);
+  pruefe('chance', berechnePunkte('chance', [1,2,3,4,5], leereKarte(), R), 15);
+  pruefe('chance kniffel', berechnePunkte('chance', [6,6,6,6,6], leereKarte(), R), 30);
+  {
+    const k = leereKarte();
+    ['eins','zwei','drei','vier','fuenf','sechs'].forEach((f,i) => k.felder[f] = (i+1)*3);
+    pruefe('bonus stand exakt 63', bonusStand(k, R).erreicht, true);
+    pruefe('bonus fehlt 0', bonusStand(k, R).fehlt, 0);
+  }
+  {
+    const k = leereKarte(); k.felder.eins = 3; k.felder.zwei = 4;
+    pruefe('bonus fehlt berechnung', bonusStand(k, R).fehlt, 63 - 7);
+  }
+  {
+    const k = leereKarte(); k.felder.sechs = 30;
+    pruefe('bonus puffer', bonusStand(k, R).puffer, 0);
+  }
+  {
+    const k = leereKarte();
+    ['eins','zwei','drei','vier','fuenf','sechs'].forEach((f,i) => k.felder[f] = (i+1)*3);
+    k.felder.chance = 20;
+    pruefe('gesamtsumme mit bonus', gesamtSumme(k, R).gesamt, 63 + 35 + 20);
+  }
+  {
+    const k = leereKarte(); k.felder.eins = 3;
+    pruefe('gesamtsumme ohne bonus', gesamtSumme(k, R).gesamt, 3);
+  }
+  {
+    const k = leereKarte(); k.felder.kniffel = 50;
+    pruefe('joker aktiv erkannt', jokerAktiv([3,3,3,3,3], k, R), true);
+    pruefe('joker erzwingt oberes feld', erzwungenesOberesFeld([3,3,3,3,3], k, R), 'drei');
+    pruefe('joker punkte im erzwungenen feld', berechnePunkte('drei', [3,3,3,3,3], k, R), 15);
+    pruefe('joker gueltige ziele nur oberes feld', gueltigeZielfelder([3,3,3,3,3], k, R), ['drei']);
+  }
+  {
+    const k = leereKarte(); k.felder.kniffel = 50; k.felder.drei = 9;
+    pruefe('joker volle grosse strasse', berechnePunkte('grossestrasse', [3,3,3,3,3], k, R), 40);
+    pruefe('joker volles full house', berechnePunkte('fullhouse', [3,3,3,3,3], k, R), 25);
+    const ziele = gueltigeZielfelder([3,3,3,3,3], k, R);
+    pruefe('joker ziele nur untere felder', ziele.every(z => UNTERE_FELDER.includes(z)), true);
+  }
+  {
+    const k = leereKarte(); k.felder.kniffel = 50;
+    UNTERE_FELDER.filter(f => f !== 'kniffel').forEach(f => k.felder[f] = 0);
+    k.felder.drei = 9;
+    const ziele = gueltigeZielfelder([3,3,3,3,3], k, R);
+    pruefe('joker faellt auf obere felder zurueck', ziele.every(z => OBERE_FELDER.includes(z)), true);
+  }
+  {
+    const k = leereKarte(); k.felder.kniffel = 50;
+    const R2 = Object.assign({}, R, { kniffelJoker: 'aus' });
+    pruefe('kein joker bei regel aus', jokerAktiv([2,2,2,2,2], k, R2), false);
+    pruefe('grosse strasse ohne joker 0', berechnePunkte('grossestrasse', [2,2,2,2,2], k, R2), 0);
+    pruefe('full house ohne joker regelabhaengig', berechnePunkte('fullhouse', [2,2,2,2,2], k, R2), 25);
+  }
+  {
+    const k = leereKarte(); k.felder.kniffel = 0;
+    pruefe('kein joker nach null-kniffel', jokerAktiv([5,5,5,5,5], k, R), false);
+    pruefe('grosse strasse nach null-kniffel', berechnePunkte('grossestrasse', [5,5,5,5,5], k, R), 0);
+  }
+  {
+    const k = leereKarte(); k.felder.kniffel = 50;
+    pruefe('kniffel bonus 100 standard', kniffelBonusPunkte([2,2,2,2,2], k, R), 100);
+    const R0 = Object.assign({}, R, { zweiterKniffelBonus: 0 });
+    pruefe('kniffel bonus 0 variante', kniffelBonusPunkte([2,2,2,2,2], k, R0), 0);
+    pruefe('kein bonus ohne kniffel im wurf', kniffelBonusPunkte([2,2,2,2,3], k, R), 0);
+    pruefe('kein bonus wenn kniffel noch nicht 50', kniffelBonusPunkte([2,2,2,2,2], leereKarte(), R), 0);
+  }
+  pruefe('gueltige werte vierer', gueltigeWerte('vier'), [0,4,8,12,16,20]);
+  pruefe('gueltige werte einser', gueltigeWerte('eins'), [0,1,2,3,4,5]);
+  pruefe('gueltige werte fullhouse', gueltigeWerte('fullhouse'), [0,25]);
+  pruefe('gueltige werte kleine strasse', gueltigeWerte('kleinestrasse'), [0,30]);
+  pruefe('gueltige werte grosse strasse', gueltigeWerte('grossestrasse'), [0,40]);
+  pruefe('gueltige werte kniffel', gueltigeWerte('kniffel'), [0,50]);
+  {
+    const k = leereKarte(); FELDER.forEach(f => k.felder[f.key] = 0);
+    pruefe('karte voll erkannt', karteIstVoll(k), true);
+    pruefe('keine offenen felder', anzahlOffenerFelder(k), 0);
+  }
+  pruefe('13 offene felder am anfang', anzahlOffenerFelder(leereKarte()), 13);
+  {
+    const k = leereKarte();
+    k.felder.eins = 3; k.felder.zwei = 6; k.felder.drei = 9; k.felder.fuenf = 15; k.felder.sechs = 18;
+    const e = empfehlung([4,4,4,4,2], k, R, 3);
+    pruefe('coach empfiehlt vierer bei bonus naehe', e.feldEmpfehlung, 'vier');
+  }
+  {
+    const k = leereKarte();
+    FELDER.forEach(f => { if (f.key !== 'kniffel' && f.key !== 'chance') k.felder[f.key] = 0; });
+    const e = empfehlung([5,5,5,5,5], k, R, 3);
+    pruefe('coach empfiehlt kniffel bei 5 gleichen', e.feldEmpfehlung, 'kniffel');
+  }
+  {
+    const k = leereKarte();
+    FELDER.forEach(f => { if (f.key !== 'grossestrasse' && f.key !== 'kniffel') k.felder[f.key] = 0; });
+    const e = empfehlung([1,1,2,2,6], k, R, 3);
+    pruefe('coach schlaegt streichen vor', e.streichen, true);
+  }
+  {
+    const k = leereKarte();
+    const e = empfehlung([1,1,1,2,3], k, R, 1);
+    pruefe('behalte-empfehlung vorhanden', !!e.behalteEmpfehlung, true);
+    pruefe('behalte-maske hat 5 eintraege', e.behalteEmpfehlung.mask.length, 5);
+  }
+  {
+    const k = leereKarte();
+    const e = empfehlung([6,6,6,6,2], k, R, 2);
+    const behaltenWerte = [6,6,6,6,2].filter((_,i) => e.behalteEmpfehlung.mask[i]);
+    pruefe('behaelt vier sechsen', behaltenWerte.filter(w => w === 6).length, 4);
+  }
+  console.log(`Kniffel-Selbsttest: ${ok} bestanden, ${fail} fehlgeschlagen (insgesamt ${ok + fail}).`);
+  if (fail > 0) console.error('SELBSTTEST FEHLGESCHLAGEN — Regeln pruefen, bevor gespielt wird!');
+  return fail === 0;
+}
+selbsttest();
+</script>
+<script>/* =========================================================================
+   SPEICHER-ADAPTER — nutzt window.storage falls vorhanden, sonst localStorage
+   ========================================================================= */
+const SCHLUESSEL = {
+  spieler: 'kniffel_spieler', spiele: 'kniffel_spiele', aktiv: 'kniffel_aktiv',
+  einstellungen: 'kniffel_einstellungen', presets: 'kniffel_presets',
+};
+const Store = {
+  async get(key, fallback) {
+    try {
+      if (window.storage && typeof window.storage.get === 'function') {
+        const v = await window.storage.get(key);
+        if (v !== undefined && v !== null) return v;
+      }
+    } catch (e) { /* weiter mit localStorage */ }
+    try {
+      const raw = localStorage.getItem(key);
+      return raw ? JSON.parse(raw) : fallback;
+    } catch (e) { return fallback; }
+  },
+  async set(key, value) {
+    try {
+      if (window.storage && typeof window.storage.set === 'function') {
+        await window.storage.set(key, value);
+        return;
+      }
+    } catch (e) { /* weiter mit localStorage */ }
+    try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) { /* Speicher voll o.ae. */ }
+  },
+  async list(prefix) {
+    try {
+      if (window.storage && typeof window.storage.list === 'function') return await window.storage.list(prefix);
+    } catch (e) { /* weiter */ }
+    try {
+      const out = [];
+      for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i); if (k && k.indexOf(prefix) === 0) out.push(k); }
+      return out;
+    } catch (e) { return []; }
+  },
+};
+
+/* =========================================================================
+   ZUSTAND
+   ========================================================================= */
+let SPIELER = [];
+let SPIELE = [];
+let AKTIV = null;
+let EINSTELLUNGEN = { coach: false, coachGefragt: false, darstellung: 'dunkel', haptik: true };
+let PRESETS = [];
+let BILDSCHIRM = 'start';
+let LETZTES_ENDE = null;
+let NEU_AUSWAHL = [];
+let NEU_REGELN = null;
+let NEU_REGELN_PRESET = 'standard';
+
+const FARB_OPTIONEN = ['#e8b93f', '#5fbf7f', '#5a9bd8', '#e2685a', '#c17ad1', '#f0955e', '#59c2c2', '#c2c2c2'];
+const EMOJI_OPTIONEN = ['🎲', '🦊', '🐼', '🐸', '🦁', '🐵', '🐧', '🦄', '🐙', '🐳', '🐺', '🦉'];
+
+const ICONS = {
+  zurueck: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>',
+  undo: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v6h6"/><path d="M3 13a9 9 0 1 0 3-7.7L3 7"/></svg>',
+  einstellungen: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>',
+  trophy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4Z"/><path d="M17 5h3a1 1 0 0 1 1 1 5 5 0 0 1-5 5"/><path d="M7 5H4a1 1 0 0 0-1 1 5 5 0 0 0 5 5"/></svg>',
+  people: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+  share: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>',
+  plus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>',
+  dice: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8" cy="8" r="1.2" fill="currentColor"/><circle cx="16" cy="8" r="1.2" fill="currentColor"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/><circle cx="8" cy="16" r="1.2" fill="currentColor"/><circle cx="16" cy="16" r="1.2" fill="currentColor"/></svg>',
+  up: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>',
+  down: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>',
+};
+
+/* =========================================================================
+   HILFSFUNKTIONEN
+   ========================================================================= */
+function klon(o) { return JSON.parse(JSON.stringify(o)); }
+function neueId() { return Date.now().toString(36) + Math.random().toString(36).slice(2, 9); }
+function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+function formatDatum(ts) { const d = new Date(ts); return d.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' }); }
+function spielerById(id) { return SPIELER.find(s => s.id === id) || { name: '?', emoji: '❓', farbe: '#888' }; }
+function haptic(stark) { if (!EINSTELLUNGEN.haptik) return; try { if (navigator.vibrate) navigator.vibrate(stark ? 25 : 10); } catch (e) { /* nicht verfuegbar */ } }
+let toastTimer = null;
+function toast(text) {
+  let el = document.getElementById('toast');
+  if (!el) { el = document.createElement('div'); el.id = 'toast'; el.className = 'toast'; document.body.appendChild(el); }
+  el.textContent = text; el.style.display = 'block';
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { el.style.display = 'none'; }, 2200);
+}
+function anwendenTheme() {
+  const root = document.documentElement;
+  if (EINSTELLUNGEN.darstellung === 'hell') root.setAttribute('data-theme', 'light');
+  else if (EINSTELLUNGEN.darstellung === 'dunkel') root.setAttribute('data-theme', 'dark');
+  else root.removeAttribute('data-theme');
+}
+
+/* =========================================================================
+   SPEICHERN
+   ========================================================================= */
+async function speichereAlles() {
+  await Promise.all([
+    Store.set(SCHLUESSEL.spieler, SPIELER),
+    Store.set(SCHLUESSEL.spiele, SPIELE),
+    Store.set(SCHLUESSEL.aktiv, AKTIV),
+    Store.set(SCHLUESSEL.einstellungen, EINSTELLUNGEN),
+    Store.set(SCHLUESSEL.presets, PRESETS),
+  ]);
+}
+async function speichereAktiv() { await Store.set(SCHLUESSEL.aktiv, AKTIV); }
+async function speichereEinstellungen() { await Store.set(SCHLUESSEL.einstellungen, EINSTELLUNGEN); }
+
+/* =========================================================================
+   SPIEL-LOGIK (Zustandsmutationen, greifen ausschliesslich auf die reinen
+   Funktionen oben zu — keine Punkteregel wird hier neu erfunden)
+   ========================================================================= */
+function karteLeer() {
+  const felder = {}; FELDER.forEach(f => felder[f.key] = null);
+  return { felder, kniffelBonusAnzahl: 0, wuerfeLog: [] };
+}
+function neuesSpielErstellen(spielerIds, regeln) {
+  const karten = {};
+  spielerIds.forEach(id => karten[id] = karteLeer());
+  AKTIV = {
+    id: neueId(), erstelltAm: Date.now(), beendetAm: null, beendet: false,
+    regeln: klon(regeln), reihenfolge: spielerIds.slice(), amZugIndex: 0,
+    modus: 'schnell', wurfNummer: 1, wuerfel: [1, 1, 1, 1, 1], wuerfelEingegeben: false,
+    karten, verlaufsStapel: [],
+  };
+}
+function aktiverSpielerId() { return AKTIV.reihenfolge[AKTIV.amZugIndex]; }
+function aktiveKarte() { return AKTIV.karten[aktiverSpielerId()]; }
+
+function schnappschussSpeichern() {
+  AKTIV.verlaufsStapel.push(klon({ karten: AKTIV.karten, amZugIndex: AKTIV.amZugIndex, wurfNummer: AKTIV.wurfNummer, wuerfel: AKTIV.wuerfel, wuerfelEingegeben: AKTIV.wuerfelEingegeben }));
+  if (AKTIV.verlaufsStapel.length > 10) AKTIV.verlaufsStapel.shift();
+}
+async function undoSchritt() {
+  if (!AKTIV || AKTIV.verlaufsStapel.length === 0) { toast('Kein Schritt zum Rückgängigmachen.'); return; }
+  const letzter = AKTIV.verlaufsStapel.pop();
+  AKTIV.karten = letzter.karten; AKTIV.amZugIndex = letzter.amZugIndex;
+  AKTIV.wurfNummer = letzter.wurfNummer; AKTIV.wuerfel = letzter.wuerfel; AKTIV.wuerfelEingegeben = letzter.wuerfelEingegeben;
+  await speichereAktiv(); render(); haptic();
+}
+function naechsterSpieler() {
+  AKTIV.amZugIndex = (AKTIV.amZugIndex + 1) % AKTIV.reihenfolge.length;
+  AKTIV.wurfNummer = 1; AKTIV.wuerfel = [1, 1, 1, 1, 1]; AKTIV.wuerfelEingegeben = false;
+}
+async function eintragenSchnell(feld, wert) {
+  schnappschussSpeichern();
+  const karte = aktiveKarte();
+  karte.felder[feld] = wert;
+  naechsterSpieler();
+  await nachEintragPruefen();
+}
+async function eintragenWuerfel(feld) {
+  const karte = aktiveKarte();
+  const wuerfel = AKTIV.wuerfel.slice();
+  const regeln = AKTIV.regeln;
+  const gueltig = gueltigeZielfelder(wuerfel, karte, regeln);
+  if (!gueltig.includes(feld)) return;
+  schnappschussSpeichern();
+  const punkte = berechnePunkte(feld, wuerfel, karte, regeln);
+  const bonus = kniffelBonusPunkte(wuerfel, karte, regeln);
+  const empf = empfehlung(wuerfel, karte, regeln, AKTIV.wurfNummer);
+  karte.felder[feld] = punkte;
+  if (bonus > 0) karte.kniffelBonusAnzahl = (karte.kniffelBonusAnzahl || 0) + 1;
+  karte.wuerfeLog.push({
+    wuerfel, gewaehltesFeld: feld, sofortGewaehlt: punkte,
+    empfehlungsFeld: empf ? empf.feldEmpfehlung : null, sofortEmpfehlung: empf ? empf.sofortwert : null,
+  });
+  naechsterSpieler();
+  await nachEintragPruefen();
+}
+async function nachEintragPruefen() {
+  const alleVoll = AKTIV.reihenfolge.every(id => karteIstVoll(AKTIV.karten[id]));
+  if (alleVoll) {
+    AKTIV.beendet = true; AKTIV.beendetAm = Date.now();
+    const abgeschlossen = klon(AKTIV);
+    SPIELE.push(abgeschlossen);
+    LETZTES_ENDE = abgeschlossen;
+    AKTIV = null;
+    await speichereAlles();
+    BILDSCHIRM = 'ende';
+  } else {
+    await speichereAktiv();
+  }
+  render();
+}
+function korrekturSpeichernFeld(spielerId, feld, wert) {
+  schnappschussSpeichern();
+  AKTIV.karten[spielerId].felder[feld] = wert;
+}
+
+/* =========================================================================
+   RENDER-DISPATCH
+   ========================================================================= */
+function render() {
+  const app = document.getElementById('app');
+  app.innerHTML = SCREENS[BILDSCHIRM] ? SCREENS[BILDSCHIRM]() : SCREENS.start();
+}
+function topbar(titel, aktionenHtml, zurueckAction) {
+  return `<div class="top">
+    ${zurueckAction ? `<button class="iconbtn" data-action="${zurueckAction}">${ICONS.zurueck}</button>` : ''}
+    <h1>${esc(titel)}</h1>
+    ${aktionenHtml || ''}
+  </div>`;
+}
+
+const SCREENS = {};
+
+SCREENS.start = function () {
+  const kannFortsetzen = AKTIV && !AKTIV.beendet;
+  return `
+  <div class="center-scr">
+    <div class="brand">
+      <div class="diehero">${ICONS.dice.replace('currentColor', 'var(--accent)')}</div>
+      <h1>${esc(TEXTE.appName)}</h1>
+    </div>
+    <div class="startlist">
+      <button class="btn btn-primary btn-block" data-action="start-neu">${ICONS.plus}${esc(TEXTE.start.neuesSpiel)}</button>
+      ${kannFortsetzen ? `<button class="btn btn-block" data-action="start-fortsetzen">${esc(TEXTE.start.fortsetzen)}</button>` : ''}
+      <button class="btn btn-block" data-action="start-bestenliste">${ICONS.trophy}${esc(TEXTE.start.bestenliste)}</button>
+      <button class="btn btn-block" data-action="start-spieler">${ICONS.people}${esc(TEXTE.start.spieler)}</button>
+      <button class="btn btn-block" data-action="start-einstellungen">${ICONS.einstellungen}${esc(TEXTE.start.einstellungen)}</button>
+    </div>
+  </div>`;
+};
+
+/* ---------- Neues Spiel ---------- */
+function regelnAusPresetName(name) {
+  if (name === 'standard') return klon(STANDARD_REGELN);
+  const p = PRESETS.find(p => p.id === name);
+  return p ? klon(p.regeln) : klon(STANDARD_REGELN);
+}
+SCREENS.neu = function () {
+  if (!NEU_REGELN) { NEU_REGELN = klon(STANDARD_REGELN); }
+  const presetOptionen = [`<option value="standard">Standard</option>`]
+    .concat(PRESETS.map(p => `<option value="${p.id}" ${NEU_REGELN_PRESET === p.id ? 'selected' : ''}>${esc(p.name)}</option>`));
+  const chips = SPIELER.map(s => {
+    const gewaehlt = NEU_AUSWAHL.includes(s.id);
+    return `<button class="btn ${gewaehlt ? 'btn-primary' : ''}" data-action="neu-toggle-spieler" data-id="${s.id}" style="justify-content:flex-start;">
+      <span class="em">${s.emoji}</span> ${esc(s.name)}
+    </button>`;
+  }).join('');
+  const reihenfolge = NEU_AUSWAHL.map((id, i) => {
+    const s = spielerById(id);
+    return `<div class="spielerchip">
+      <span class="em">${s.emoji}</span><span style="flex:1;font-weight:600;">${esc(s.name)}</span>
+      <button class="iconbtn" data-action="neu-rauf" data-id="${id}" ${i === 0 ? 'disabled style="opacity:.3"' : ''}>${ICONS.up}</button>
+      <button class="iconbtn" data-action="neu-runter" data-id="${id}" ${i === NEU_AUSWAHL.length - 1 ? 'disabled style="opacity:.3"' : ''}>${ICONS.down}</button>
+    </div>`;
+  }).join('');
+  return `
+  ${topbar(TEXTE.neu.titel, '', 'nav-start')}
+  <div class="scr">
+    <div class="gruppen-titel">${esc(TEXTE.neu.spielerWaehlen)}</div>
+    <div class="stack">${chips}</div>
+    <button class="btn btn-block" data-action="spieler-neu-modal">${ICONS.plus}${esc(TEXTE.neu.neuerSpieler)}</button>
+    ${NEU_AUSWAHL.length > 0 ? `<div class="gruppen-titel">${esc(TEXTE.neu.reihenfolge)}</div><div class="stack">${reihenfolge}</div>` : ''}
+    <div class="gruppen-titel">${esc(TEXTE.neu.regelvariante)}</div>
+    <div class="card stack">
+      <div class="field"><select data-action="neu-preset-wahl">${presetOptionen.join('')}</select></div>
+      ${regelEditorHtml(NEU_REGELN)}
+      <button class="btn" data-action="neu-preset-speichern">${esc(TEXTE.einst.presetSpeichern)}</button>
+    </div>
+    <button class="btn btn-primary btn-block" data-action="neu-starten" ${NEU_AUSWAHL.length === 0 ? 'disabled style="opacity:.4"' : ''}>${esc(TEXTE.neu.starten)}</button>
+  </div>`;
+};
+function regelEditorHtml(r) {
+  return `
+    <div class="field"><label>${esc(TEXTE.regeln.joker)}</label>
+      <select data-action="regel-joker">
+        <option value="aus" ${r.kniffelJoker === 'aus' ? 'selected' : ''}>${esc(TEXTE.regeln.jokerAus)}</option>
+        <option value="standard" ${r.kniffelJoker === 'standard' ? 'selected' : ''}>${esc(TEXTE.regeln.jokerStandard)}</option>
+        <option value="frei" ${r.kniffelJoker === 'frei' ? 'selected' : ''}>${esc(TEXTE.regeln.jokerFrei)}</option>
+      </select>
+    </div>
+    <div class="field"><label>${esc(TEXTE.regeln.zweiterBonus)}</label>
+      <select data-action="regel-zweiterbonus">
+        <option value="0" ${r.zweiterKniffelBonus === 0 ? 'selected' : ''}>0</option>
+        <option value="50" ${r.zweiterKniffelBonus === 50 ? 'selected' : ''}>50</option>
+        <option value="100" ${r.zweiterKniffelBonus === 100 ? 'selected' : ''}>100</option>
+      </select>
+    </div>
+    <div class="settings-row"><label>${esc(TEXTE.regeln.fullhouseFuenf)}</label>
+      <button class="switch ${r.fullHouseBeiFuenfGleichen ? 'an' : ''}" data-action="regel-fullhouse"><span class="knob"></span></button>
+    </div>
+    <div class="field"><label>${esc(TEXTE.regeln.bonusSchwelle)}</label><input type="number" inputmode="numeric" data-action="regel-bonusschwelle" value="${r.bonusSchwelle}"></div>
+    <div class="field"><label>${esc(TEXTE.regeln.bonusHoehe)}</label><input type="number" inputmode="numeric" data-action="regel-bonushoehe" value="${r.bonusHoehe}"></div>
+  `;
+}
+
+/* ---------- Spielerverwaltung ---------- */
+SCREENS.spieler = function () {
+  const liste = SPIELER.length === 0 ? `<p class="muted">${esc(TEXTE.spieler.keine)}</p>` : SPIELER.map(s => `
+    <div class="spielerchip">
+      <span class="em">${s.emoji}</span>
+      <span style="flex:1;font-weight:600;">${esc(s.name)}</span>
+      <span style="width:14px;height:14px;border-radius:50%;background:${s.farbe};"></span>
+      <button class="iconbtn" data-action="spieler-bearbeiten" data-id="${s.id}">✎</button>
+    </div>`).join('');
+  return `
+  ${topbar(TEXTE.spieler.titel, '', 'nav-start')}
+  <div class="scr">
+    <div class="stack">${liste}</div>
+    <button class="btn btn-primary btn-block" data-action="spieler-neu-modal">${ICONS.plus}${esc(TEXTE.spieler.neu)}</button>
+  </div>`;
+};
+
+/* ---------- Einstellungen ---------- */
+SCREENS.einstellungen = function () {
+  const presetListe = PRESETS.map(p => `
+    <div class="spielerchip"><span style="flex:1;font-weight:600;">${esc(p.name)}</span>
+      <button class="iconbtn" data-action="preset-loeschen" data-id="${p.id}">🗑</button>
+    </div>`).join('');
+  return `
+  ${topbar(TEXTE.einst.titel, '', 'nav-start')}
+  <div class="scr">
+    <div class="card stack">
+      <div class="settings-row"><span>${esc(TEXTE.einst.coach)}</span>
+        <button class="switch ${EINSTELLUNGEN.coach ? 'an' : ''}" data-action="einst-coach"><span class="knob"></span></button>
+      </div>
+      <div class="settings-row"><span>${esc(TEXTE.einst.haptik)}</span>
+        <button class="switch ${EINSTELLUNGEN.haptik ? 'an' : ''}" data-action="einst-haptik"><span class="knob"></span></button>
+      </div>
+    </div>
+    <div class="gruppen-titel">${esc(TEXTE.einst.darstellung)}</div>
+    <div class="modeswitch">
+      <button class="${EINSTELLUNGEN.darstellung === 'auto' ? 'aktiv' : ''}" data-action="einst-darstellung" data-wert="auto">${esc(TEXTE.einst.auto)}</button>
+      <button class="${EINSTELLUNGEN.darstellung === 'hell' ? 'aktiv' : ''}" data-action="einst-darstellung" data-wert="hell">${esc(TEXTE.einst.hell)}</button>
+      <button class="${EINSTELLUNGEN.darstellung === 'dunkel' ? 'aktiv' : ''}" data-action="einst-darstellung" data-wert="dunkel">${esc(TEXTE.einst.dunkel)}</button>
+    </div>
+    ${PRESETS.length > 0 ? `<div class="gruppen-titel">${esc(TEXTE.einst.regelpresets)}</div><div class="stack">${presetListe}</div>` : ''}
+    <div class="gruppen-titel">${esc(TEXTE.einst.daten)}</div>
+    <div class="stack">
+      <button class="btn btn-block" data-action="daten-export">${esc(TEXTE.einst.exportieren)}</button>
+      <button class="btn btn-block" data-action="daten-import">${esc(TEXTE.einst.importieren)}</button>
+      <input type="file" id="importInput" accept="application/json" style="display:none;">
+      <button class="btn btn-danger btn-block" data-action="daten-loeschen">${esc(TEXTE.einst.allesLoeschen)}</button>
+    </div>
+  </div>`;
+};
+
+/* ---------- Spielblock (Hauptbildschirm) ---------- */
+const BLOCK_ZEILEN = [
+  { typ: 'feld', key: 'eins' }, { typ: 'feld', key: 'zwei' }, { typ: 'feld', key: 'drei' },
+  { typ: 'feld', key: 'vier' }, { typ: 'feld', key: 'fuenf' }, { typ: 'feld', key: 'sechs' },
+  { typ: 'zwischensumme' }, { typ: 'bonus' },
+  { typ: 'feld', key: 'dreierpasch' }, { typ: 'feld', key: 'viererpasch' }, { typ: 'feld', key: 'fullhouse' },
+  { typ: 'feld', key: 'kleinestrasse' }, { typ: 'feld', key: 'grossestrasse' },
+  { typ: 'feld', key: 'kniffel' }, { typ: 'feld', key: 'chance' },
+  { typ: 'gesamt' },
+];
+function aktuelleEmpfehlung() {
+  if (!AKTIV || AKTIV.modus !== 'wuerfel' || !AKTIV.wuerfelEingegeben) return null;
+  return empfehlung(AKTIV.wuerfel, aktiveKarte(), AKTIV.regeln, AKTIV.wurfNummer);
+}
+SCREENS.spiel = function () {
+  if (!AKTIV) { BILDSCHIRM = 'start'; return SCREENS.start(); }
+  const regeln = AKTIV.regeln;
+  const amZugId = aktiverSpielerId();
+  const empf = aktuelleEmpfehlung();
+  const gueltigZiel = AKTIV.modus === 'wuerfel' && AKTIV.wuerfelEingegeben
+    ? gueltigeZielfelder(AKTIV.wuerfel, aktiveKarte(), regeln) : [];
+
+  const kopf = AKTIV.reihenfolge.map(id => {
+    const s = spielerById(id);
+    const ist = id === amZugId;
+    return `<th class="${ist ? 'aktiv' : ''}"><div class="spielername" style="${ist ? `color:${s.farbe}` : ''}"><span class="em">${s.emoji}</span><span>${esc(s.name)}</span></div></th>`;
+  }).join('');
+
+  const zeilenHtml = BLOCK_ZEILEN.map(zeile => {
+    if (zeile.typ === 'zwischensumme' || zeile.typ === 'bonus' || zeile.typ === 'gesamt') {
+      const label = zeile.typ === 'zwischensumme' ? TEXTE.feld.zwischensumme : zeile.typ === 'bonus' ? TEXTE.feld.bonus : TEXTE.feld.gesamt;
+      const zellen = AKTIV.reihenfolge.map(id => {
+        const karte = AKTIV.karten[id]; const ist = id === amZugId;
+        let inhalt;
+        if (zeile.typ === 'zwischensumme') inhalt = `<span class="font-num">${summeOben(karte)}</span>`;
+        else if (zeile.typ === 'bonus') {
+          const st = bonusStand(karte, regeln);
+          inhalt = st.erreicht
+            ? `<span class="font-num" style="color:var(--good);font-weight:700;">${TEXTE.block.puffer(st.puffer)}</span>`
+            : `<span class="muted bonus-hint font-num">${TEXTE.block.nochOffen(st.fehlt)}</span>`;
+        } else {
+          inhalt = `<span class="font-num">${gesamtSumme(karte, regeln).gesamt}</span>`;
+        }
+        return `<td class="${ist ? 'aktiv' : ''} ${zeile.typ === 'gesamt' ? 'summen-row' : ''}">${inhalt}</td>`;
+      }).join('');
+      return `<tr class="${zeile.typ === 'gesamt' ? 'summen-row' : ''}"><td class="feldname">${esc(label)}</td>${zellen}</tr>`;
+    }
+    const key = zeile.key;
+    const zellen = AKTIV.reihenfolge.map(id => {
+      const karte = AKTIV.karten[id]; const ist = id === amZugId; const wert = karte.felder[key];
+      let inhalt;
+      if (wert !== null) {
+        inhalt = `<button class="zelle-btn font-num" data-longaction="feld-korrektur" data-id="${id}" data-feld="${key}">${wert}</button>`;
+      } else if (!ist) {
+        inhalt = `<span class="zelle-leer">–</span>`;
+      } else if (AKTIV.modus === 'schnell') {
+        inhalt = `<button class="zelle-btn zelle-leer" data-action="feld-tippen-schnell" data-feld="${key}">–</button>`;
+      } else if (!AKTIV.wuerfelEingegeben) {
+        inhalt = `<span class="zelle-leer">–</span>`;
+      } else if (gueltigZiel.includes(key)) {
+        const punkte = berechnePunkte(key, AKTIV.wuerfel, karte, regeln);
+        const hervorheben = EINSTELLUNGEN.coach && empf && empf.feldEmpfehlung === key;
+        inhalt = `<button class="zelle-btn font-num ${hervorheben ? 'zelle-empf' : ''}" data-action="feld-tippen-wuerfel" data-feld="${key}">${punkte}</button>`;
+      } else {
+        inhalt = `<span class="zelle-leer" style="opacity:.3;">–</span>`;
+      }
+      return `<td class="${ist ? 'aktiv' : ''}">${inhalt}</td>`;
+    }).join('');
+    return `<tr><td class="feldname">${esc(TEXTE.feld[key])}</td>${zellen}</tr>`;
+  }).join('');
+
+  const wuerfelPanel = AKTIV.modus !== 'wuerfel' ? '' : `
+    <div class="card stack">
+      <div class="wuerfel-reihe">
+        ${AKTIV.wuerfel.map((w, i) => {
+          const behalten = empf && empf.behalteEmpfehlung && EINSTELLUNGEN.coach && empf.behalteEmpfehlung.mask[i];
+          return `<button class="wuerfel ${behalten ? 'gehalten' : ''}" data-action="wuerfel-tippen" data-longaction="wuerfel-runter" data-index="${i}">${w}</button>`;
+        }).join('')}
+      </div>
+      <div class="row" style="justify-content:center;flex-wrap:wrap;">
+        <span class="chip font-num">${esc(TEXTE.wuerfel.wurf(AKTIV.wurfNummer))}</span>
+        ${AKTIV.wurfNummer < 3 ? `<button class="btn" data-action="wuerfel-naechster-wurf">${esc(TEXTE.wuerfel.naechsterWurf)}</button>` : `<span class="chip">${esc(TEXTE.wuerfel.letzterWurf)}</span>`}
+      </div>
+      ${coachBoxHtml(empf)}
+    </div>`;
+
+  return `
+  <div class="top">
+    <button class="iconbtn" data-action="nav-start">${ICONS.zurueck}</button>
+    <h1>${esc(TEXTE.allg.amZug(spielerById(amZugId).name))}</h1>
+    <button class="iconbtn" data-action="undo" ${AKTIV.verlaufsStapel.length === 0 ? 'style="opacity:.35"' : ''}>${ICONS.undo}</button>
+  </div>
+  <div class="scr" style="gap:.8rem;">
+    <div class="modeswitch">
+      <button class="${AKTIV.modus === 'schnell' ? 'aktiv' : ''}" data-action="modus-schnell">${esc(TEXTE.block.schnell)}</button>
+      <button class="${AKTIV.modus === 'wuerfel' ? 'aktiv' : ''}" data-action="modus-wuerfel">${esc(TEXTE.block.wuerfel)}</button>
+    </div>
+    ${wuerfelPanel}
+    <div class="block-wrap">
+      <table class="block">
+        <thead><tr><th class="feldname"></th>${kopf}</tr></thead>
+        <tbody>${zeilenHtml}</tbody>
+      </table>
+    </div>
+  </div>`;
+};
+function coachBoxHtml(empf) {
+  if (!EINSTELLUNGEN.coach) return `<div class="coach-box aus"><span class="muted">${esc(TEXTE.wuerfel.coachAus)}</span></div>`;
+  if (!empf) return '';
+  const regeln = AKTIV.regeln, karte = aktiveKarte();
+  let satz;
+  if (empf.streichen) satz = TEXTE.wuerfel.streichenText(TEXTE.feld[empf.feldEmpfehlung]);
+  else if (OBERE_FELDER.includes(empf.feldEmpfehlung) && !bonusStand(karte, regeln).erreicht) satz = TEXTE.wuerfel.sicherBonus(TEXTE.feld[empf.feldEmpfehlung]);
+  else satz = TEXTE.wuerfel.guterWert(TEXTE.feld[empf.feldEmpfehlung]);
+  let behalteHtml = '';
+  if (empf.behalteEmpfehlung) {
+    const werte = AKTIV.wuerfel.filter((_, i) => empf.behalteEmpfehlung.mask[i]);
+    behalteHtml = `<div class="muted" style="margin-top:.4rem;">${esc(TEXTE.wuerfel.empfBehalten)} <b class="font-num">${werte.length ? esc(werte.join(', ')) : '– (alle neu würfeln)'}</b></div>`;
+  }
+  return `<div class="coach-box"><div style="font-weight:700;">${esc(satz)}</div>${behalteHtml}</div>`;
+}
+
+/* ---------- Spielende ---------- */
+function highlightsFuerSpiel(spiel) {
+  const out = {};
+  spiel.reihenfolge.forEach(id => {
+    const karte = spiel.karten[id];
+    const regeln = spiel.regeln;
+    const hl = [];
+    const kniffelAnzahl = (karte.felder.kniffel === 50 ? 1 : 0) + (karte.kniffelBonusAnzahl || 0);
+    if (kniffelAnzahl >= 2) hl.push(TEXTE.ende.hlKniffel(kniffelAnzahl));
+    const st = bonusStand(karte, regeln);
+    if (st.erreicht) hl.push(TEXTE.ende.hlBonusErreicht);
+    else if (st.fehlt > 0 && st.fehlt <= 10) hl.push(TEXTE.ende.hlBonusVerpasst(st.fehlt));
+    const gesamt = gesamtSumme(karte, regeln).gesamt;
+    const bisherigeSpiele = SPIELE.filter(sp => sp.id !== spiel.id && sp.reihenfolge.includes(id));
+    const bisherMax = bisherigeSpiele.reduce((m, sp) => Math.max(m, gesamtSumme(sp.karten[id], sp.regeln).gesamt), -Infinity);
+    if (bisherigeSpiele.length === 0 || gesamt > bisherMax) hl.push(TEXTE.ende.hlBestleistung);
+    out[id] = hl;
+  });
+  return out;
+}
+SCREENS.ende = function () {
+  const spiel = LETZTES_ENDE;
+  if (!spiel) { BILDSCHIRM = 'start'; return SCREENS.start(); }
+  const ergebnisse = spiel.reihenfolge.map(id => ({ id, s: spielerById(id), gesamt: gesamtSumme(spiel.karten[id], spiel.regeln).gesamt }))
+    .sort((a, b) => b.gesamt - a.gesamt);
+  const sieger = ergebnisse[0];
+  const highlights = highlightsFuerSpiel(spiel);
+  const zeilen = ergebnisse.map((e, i) => `
+    <div class="row" style="justify-content:space-between;padding:.5rem 0;${i === 0 ? `color:${e.s.farbe};font-weight:800;` : ''}">
+      <span class="row"><span style="width:1.4rem;">${i + 1}.</span><span class="em">${e.s.emoji}</span> ${esc(e.s.name)}</span>
+      <span class="font-num" style="font-size:1.3rem;">${e.gesamt}</span>
+    </div>
+    ${highlights[e.id].length ? `<div class="muted" style="font-size:.85rem;margin:-.3rem 0 .3rem 2.2rem;">${highlights[e.id].map(esc).join(' · ')}</div>` : ''}
+  `).join('');
+  return `
+  ${topbar(TEXTE.ende.titel, '', null)}
+  <div class="scr">
+    <div class="card" style="text-align:center;">
+      <div style="font-size:2rem;">🏆</div>
+      <h2 style="margin:.3rem 0;">${esc(TEXTE.ende.sieger(sieger.s.name))}</h2>
+    </div>
+    <div class="card">
+      <div class="gruppen-titel" style="margin-bottom:.5rem;">${esc(TEXTE.ende.endstand)}</div>
+      ${zeilen}
+    </div>
+    <canvas id="ergebnisCanvas" width="1080" height="1350" style="display:none;"></canvas>
+    <button class="btn btn-primary btn-block" data-action="ergebnis-teilen">${ICONS.share}${esc(TEXTE.ende.bildTeilen)}</button>
+    <button class="btn btn-block" data-action="start-neu">${esc(TEXTE.ende.neuesSpiel)}</button>
+    <button class="btn btn-ghost btn-block" data-action="nav-start">${esc(TEXTE.ende.zumStart)}</button>
+  </div>`;
+};
+
+function zeichneErgebnisBild(spiel) {
+  const c = document.getElementById('ergebnisCanvas');
+  const ctx = c.getContext('2d');
+  const W = c.width, H = c.height;
+  const ergebnisse = spiel.reihenfolge.map(id => ({ id, s: spielerById(id), gesamt: gesamtSumme(spiel.karten[id], spiel.regeln).gesamt }))
+    .sort((a, b) => b.gesamt - a.gesamt);
+  const highlights = highlightsFuerSpiel(spiel);
+  ctx.fillStyle = '#14161b'; ctx.fillRect(0, 0, W, H);
+  ctx.fillStyle = '#e8b93f';
+  ctx.font = '700 64px -apple-system, sans-serif';
+  ctx.fillText('Kniffel', 70, 130);
+  ctx.fillStyle = '#9aa0ac'; ctx.font = '400 30px -apple-system, sans-serif';
+  ctx.fillText(formatDatum(spiel.beendetAm || Date.now()), 70, 175);
+  ctx.fillStyle = '#f2f0e8'; ctx.font = '700 46px -apple-system, sans-serif';
+  ctx.fillText(`${ergebnisse[0].s.name} gewinnt!`, 70, 260);
+
+  let y = 350;
+  ergebnisse.forEach((e, i) => {
+    ctx.fillStyle = i === 0 ? '#e8b93f' : '#f2f0e8';
+    ctx.font = `${i === 0 ? '800' : '600'} 44px -apple-system, sans-serif`;
+    ctx.fillText(`${i + 1}. ${e.s.emoji} ${e.s.name}`, 70, y);
+    ctx.textAlign = 'right';
+    ctx.fillText(String(e.gesamt), W - 70, y);
+    ctx.textAlign = 'left';
+    y += 60;
+    const hl = highlights[e.id];
+    if (hl.length) {
+      ctx.fillStyle = '#9aa0ac'; ctx.font = '400 28px -apple-system, sans-serif';
+      ctx.fillText(hl.join(' · '), 90, y);
+      y += 45;
+    }
+    y += 20;
+  });
+  ctx.fillStyle = '#6b6a63'; ctx.font = '400 24px -apple-system, sans-serif';
+  ctx.fillText('Erstellt mit der Kniffel-App', 70, H - 50);
+  return c;
+}
+async function ergebnisTeilen() {
+  const c = zeichneErgebnisBild(LETZTES_ENDE);
+  c.toBlob(async blob => {
+    if (!blob) return;
+    const datei = new File([blob], 'kniffel-ergebnis.png', { type: 'image/png' });
+    try {
+      if (navigator.canShare && navigator.canShare({ files: [datei] })) {
+        await navigator.share({ files: [datei], title: 'Kniffel-Ergebnis' });
+        return;
+      }
+    } catch (e) { /* Nutzer hat abgebrochen oder Teilen nicht moeglich */ }
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'kniffel-ergebnis.png';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 4000);
+  }, 'image/png');
+}
+
+/* ---------- Bestenliste / Analyse ---------- */
+let BEST_ZEITRAUM = 'alle';
+let BEST_TAB = 'tabelle';
+function spieleImZeitraum() {
+  const jetzt = Date.now();
+  return SPIELE.filter(sp => {
+    if (BEST_ZEITRAUM === 'alle') return true;
+    const d = new Date(sp.beendetAm || sp.erstelltAm);
+    const n = new Date(jetzt);
+    if (BEST_ZEITRAUM === 'jahr') return d.getFullYear() === n.getFullYear();
+    return d.getFullYear() === n.getFullYear() && d.getMonth() === n.getMonth();
+  });
+}
+function statistikProSpieler(spiele) {
+  const map = {};
+  SPIELER.forEach(s => map[s.id] = { spieler: s, spiele: 0, siege: 0, summe: 0, beste: 0, bonusTreffer: 0, kniffelGesamt: 0, gestrichen: {}, feldSumme: {}, feldAnzahl: {} });
+  spiele.forEach(sp => {
+    const ergebnisse = sp.reihenfolge.map(id => ({ id, gesamt: gesamtSumme(sp.karten[id], sp.regeln).gesamt }));
+    const maxGesamt = Math.max(...ergebnisse.map(e => e.gesamt));
+    sp.reihenfolge.forEach(id => {
+      if (!map[id]) return;
+      const karte = sp.karten[id]; const m = map[id];
+      m.spiele++;
+      const gesamt = gesamtSumme(karte, sp.regeln).gesamt;
+      m.summe += gesamt; m.beste = Math.max(m.beste, gesamt);
+      if (gesamt === maxGesamt) m.siege++;
+      if (bonusStand(karte, sp.regeln).erreicht) m.bonusTreffer++;
+      m.kniffelGesamt += (karte.felder.kniffel === 50 ? 1 : 0) + (karte.kniffelBonusAnzahl || 0);
+      FELDER.forEach(f => {
+        const w = karte.felder[f.key];
+        if (w !== null) {
+          m.feldSumme[f.key] = (m.feldSumme[f.key] || 0) + w;
+          m.feldAnzahl[f.key] = (m.feldAnzahl[f.key] || 0) + 1;
+          if (w === 0) m.gestrichen[f.key] = (m.gestrichen[f.key] || 0) + 1;
+        }
+      });
+    });
+  });
+  return map;
+}
+function svgLinienchart(reihen, breite, hoehe) {
+  const alleWerte = reihen.flatMap(r => r.werte);
+  if (alleWerte.length === 0) return `<p class="muted">${esc(TEXTE.best.keineDaten)}</p>`;
+  const max = Math.max(...alleWerte, 1), min = Math.min(...alleWerte, 0);
+  const pad = 24;
+  const maxLen = Math.max(...reihen.map(r => r.werte.length), 1);
+  const x = i => pad + (maxLen <= 1 ? 0 : (breite - 2 * pad) * (i / (maxLen - 1)));
+  const y = v => hoehe - pad - (hoehe - 2 * pad) * ((v - min) / Math.max(1, (max - min)));
+  const linien = reihen.map(r => {
+    if (r.werte.length === 0) return '';
+    const pts = r.werte.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(' ');
+    const punkte = r.werte.map((v, i) => `<circle cx="${x(i).toFixed(1)}" cy="${y(v).toFixed(1)}" r="3.5" fill="${r.farbe}"></circle>`).join('');
+    return `<polyline points="${pts}" fill="none" stroke="${r.farbe}" stroke-width="2.5"></polyline>${punkte}`;
+  }).join('');
+  return `<svg class="chart" viewBox="0 0 ${breite} ${hoehe}" style="width:100%;height:auto;">${linien}</svg>`;
+}
+SCREENS.bestenliste = function () {
+  const spiele = spieleImZeitraum();
+  const stats = statistikProSpieler(spiele);
+  const liste = Object.values(stats).filter(s => s.spiele > 0).sort((a, b) => b.siege - a.siege || b.summe - a.summe);
+  const tabsZeit = ['monat', 'jahr', 'alle'].map(z => `<button class="${BEST_ZEITRAUM === z ? 'aktiv' : ''}" data-action="best-zeitraum" data-wert="${z}">${esc(TEXTE.best.zeitraum[z])}</button>`).join('');
+  const tabsAnsicht = [['tabelle', 'Tabelle'], ['verlauf', TEXTE.best.verlauf], ['felder', TEXTE.best.felder], ['wuerfel', TEXTE.best.wuerfelstats]]
+    .map(([k, l]) => `<button class="${BEST_TAB === k ? 'aktiv' : ''}" data-action="best-tab" data-wert="${k}">${esc(l)}</button>`).join('');
+
+  let inhalt = '';
+  if (spiele.length === 0) {
+    inhalt = `<p class="muted">${esc(TEXTE.best.keineDaten)}</p>`;
+  } else if (BEST_TAB === 'tabelle') {
+    const zeilen = liste.map(s => `<tr>
+      <td>${s.spieler.emoji} ${esc(s.spieler.name)}</td>
+      <td class="font-num">${s.spiele}</td><td class="font-num">${s.siege}</td>
+      <td class="font-num">${Math.round((s.siege / s.spiele) * 100)}%</td>
+      <td class="font-num">${Math.round(s.summe / s.spiele)}</td>
+      <td class="font-num">${s.beste}</td>
+    </tr>`).join('');
+    inhalt = `<div class="card" style="overflow-x:auto;"><table class="stat">
+      <tr><th></th><th>${esc(TEXTE.best.spiele)}</th><th>${esc(TEXTE.best.siege)}</th><th>${esc(TEXTE.best.quote)}</th><th>${esc(TEXTE.best.schnitt)}</th><th>${esc(TEXTE.best.beste)}</th></tr>
+      ${zeilen}</table></div>`;
+  } else if (BEST_TAB === 'verlauf') {
+    const reihen = liste.map(s => ({
+      farbe: s.spieler.farbe,
+      werte: spiele.filter(sp => sp.reihenfolge.includes(s.spieler.id)).sort((a, b) => a.beendetAm - b.beendetAm).map(sp => gesamtSumme(sp.karten[s.spieler.id], sp.regeln).gesamt),
+    }));
+    const legende = liste.map(s => `<span class="chip" style="border-left:4px solid ${s.spieler.farbe};">${s.spieler.emoji} ${esc(s.spieler.name)}</span>`).join(' ');
+    inhalt = `<div class="card stack"><div class="row" style="flex-wrap:wrap;">${legende}</div>${svgLinienchart(reihen, 600, 260)}</div>`;
+  } else if (BEST_TAB === 'felder') {
+    inhalt = liste.map(s => {
+      const felderZeilen = FELDER.map(f => {
+        const schnitt = s.feldAnzahl[f.key] ? (s.feldSumme[f.key] / s.feldAnzahl[f.key]) : null;
+        return `<tr><td>${esc(TEXTE.feld[f.key])}</td><td class="font-num">${schnitt !== null ? schnitt.toFixed(1) : '–'}</td><td class="font-num">${s.gestrichen[f.key] || 0}</td></tr>`;
+      }).join('');
+      return `<div class="card stack">
+        <div class="row"><span class="em">${s.spieler.emoji}</span><b>${esc(s.spieler.name)}</b></div>
+        <div class="row" style="justify-content:space-between;"><span class="muted">${esc(TEXTE.best.bonusQuote)}</span><span class="font-num">${Math.round((s.bonusTreffer / s.spiele) * 100)}%</span></div>
+        <div class="row" style="justify-content:space-between;"><span class="muted">${esc(TEXTE.best.anzahlKniffel)}</span><span class="font-num">${s.kniffelGesamt}</span></div>
+        <table class="stat"><tr><th>${esc(TEXTE.best.felder)}</th><th>Ø</th><th>${esc(TEXTE.best.gestrichenAls)}</th></tr>${felderZeilen}</table>
+      </div>`;
+    }).join('');
+  } else if (BEST_TAB === 'wuerfel') {
+    const mitWuerfeldaten = liste.filter(s => spiele.some(sp => (sp.karten[s.spieler.id].wuerfeLog || []).length > 0));
+    if (mitWuerfeldaten.length === 0) inhalt = `<p class="muted">${esc(TEXTE.best.keineWuerfeldaten)}</p>`;
+    else inhalt = mitWuerfeldaten.map(s => {
+      const augen = [0, 0, 0, 0, 0, 0, 0];
+      let istSumme = 0, waereSumme = 0, zuege = 0;
+      spiele.forEach(sp => (sp.karten[s.spieler.id].wuerfeLog || []).forEach(log => {
+        log.wuerfel.forEach(w => augen[w]++);
+        istSumme += log.sofortGewaehlt; waereSumme += (log.sofortEmpfehlung !== null ? log.sofortEmpfehlung : log.sofortGewaehlt);
+        zuege++;
+      }));
+      const augenHtml = [1, 2, 3, 4, 5, 6].map(z => `<div class="row" style="justify-content:space-between;"><span>${z}</span><span class="font-num">${augen[z]}</span></div>`).join('');
+      return `<div class="card stack">
+        <div class="row"><span class="em">${s.spieler.emoji}</span><b>${esc(s.spieler.name)}</b></div>
+        <div class="gruppen-titel">${esc(TEXTE.best.augenHaeufigkeit)}</div>
+        ${augenHtml}
+        ${zuege > 0 ? `<div class="muted" style="margin-top:.4rem;">${esc(TEXTE.best.coachVergleich(istSumme, waereSumme))}</div>` : ''}
+      </div>`;
+    }).join('');
+  }
+
+  return `
+  ${topbar(TEXTE.best.titel, '', 'nav-start')}
+  <div class="scr">
+    <div class="tabs">${tabsZeit}</div>
+    <div class="tabs">${tabsAnsicht}</div>
+    ${inhalt}
+  </div>`;
+};
+
+/* =========================================================================
+   OVERLAY / MODAL SYSTEM
+   ========================================================================= */
+function zeigeOverlay(html, zentriert) {
+  const root = document.getElementById('overlays');
+  root.innerHTML = `<div class="overlay ${zentriert ? 'center' : ''}" data-action="overlay-hintergrund"><div class="sheet" data-stop="1">${html}</div></div>`;
+}
+function schliesseOverlay() { document.getElementById('overlays').innerHTML = ''; }
+
+function zeigeOverlayResume() {
+  zeigeOverlay(`
+    <h2>${esc(TEXTE.start.unterbrochenTitel)}</h2>
+    <p class="muted">${esc(TEXTE.start.unterbrochenText)}</p>
+    <div class="stack">
+      <button class="btn btn-primary btn-block" data-action="resume-ja">${esc(TEXTE.start.fortsetzenBtn)}</button>
+      <button class="btn btn-ghost btn-block" data-action="resume-nein">${esc(TEXTE.start.verwerfenBtn)}</button>
+    </div>`, true);
+}
+function zeigeOverlayCoachAngebot() {
+  zeigeOverlay(`
+    <h2>${esc(TEXTE.start.coachAngebotTitel)}</h2>
+    <p class="muted">${esc(TEXTE.start.coachAngebotText)}</p>
+    <div class="stack">
+      <button class="btn btn-primary btn-block" data-action="coach-angebot-ja">${esc(TEXTE.start.coachAn)}</button>
+      <button class="btn btn-ghost btn-block" data-action="coach-angebot-nein">${esc(TEXTE.start.coachAus)}</button>
+    </div>`, true);
+}
+let SPIELER_FORMULAR = null;
+function zeigeOverlaySpielerForm(bestehenderId) {
+  const bestehend = bestehenderId ? spielerById(bestehenderId) : null;
+  SPIELER_FORMULAR = bestehend ? klon(bestehend) : { id: neueId(), name: '', farbe: FARB_OPTIONEN[SPIELER.length % FARB_OPTIONEN.length], emoji: EMOJI_OPTIONEN[SPIELER.length % EMOJI_OPTIONEN.length] };
+  renderSpielerFormular(!!bestehend);
+}
+function renderSpielerFormular(bearbeiten) {
+  const f = SPIELER_FORMULAR;
+  zeigeOverlay(`
+    <h2>${esc(bearbeiten ? TEXTE.spieler.titel : TEXTE.spieler.neu)}</h2>
+    <div class="stack">
+      <div class="field"><label>${esc(TEXTE.spieler.name)}</label><input id="spielerNameInput" value="${esc(f.name)}" maxlength="20" placeholder="Name"></div>
+      <div class="field"><label>${esc(TEXTE.spieler.emoji)}</label>
+        <div class="emoji-grid">${EMOJI_OPTIONEN.map(e => `<button class="${f.emoji === e ? 'aktiv' : ''}" data-action="spieler-form-emoji" data-wert="${e}">${e}</button>`).join('')}</div>
+      </div>
+      <div class="field"><label>${esc(TEXTE.spieler.farbe)}</label>
+        <div class="farb-grid">${FARB_OPTIONEN.map(c => `<button class="farb-dot ${f.farbe === c ? 'aktiv' : ''}" data-action="spieler-form-farbe" data-wert="${c}" style="background:${c}"></button>`).join('')}</div>
+      </div>
+      <button class="btn btn-primary btn-block" data-action="spieler-form-speichern">${esc(TEXTE.spieler.speichern)}</button>
+      ${bearbeiten ? `<button class="btn btn-danger btn-block" data-action="spieler-form-loeschen">${esc(TEXTE.spieler.loeschen)}</button>` : ''}
+      <button class="btn btn-ghost btn-block" data-action="overlay-schliessen">${esc(TEXTE.spieler.abbrechen)}</button>
+    </div>`);
+}
+function zeigeOverlayFeldSchnell(feld) {
+  const werte = gueltigeWerte(feld);
+  zeigeOverlay(`
+    <h2>${esc(TEXTE.feld[feld])}</h2>
+    <div class="werte-grid">${werte.map(w => `<button data-action="feld-schnell-wert" data-feld="${feld}" data-wert="${w}">${w}</button>`).join('')}</div>`);
+}
+function zeigeOverlayKorrektur(spielerId, feld) {
+  const werte = gueltigeWerte(feld);
+  zeigeOverlay(`
+    <h2>${esc(TEXTE.block.korrekturTitel)}</h2>
+    <p class="muted">${esc(TEXTE.block.korrekturText)}</p>
+    <div class="werte-grid">${werte.map(w => `<button data-action="feld-korrektur-wert" data-id="${spielerId}" data-feld="${feld}" data-wert="${w}">${w}</button>`).join('')}</div>
+    <button class="btn btn-danger btn-block" style="margin-top:.8rem;" data-action="feld-korrektur-loeschen" data-id="${spielerId}" data-feld="${feld}">${esc(TEXTE.block.eintragLoeschen)}</button>
+    <button class="btn btn-ghost btn-block" data-action="overlay-schliessen">${esc(TEXTE.allg.abbrechen)}</button>`);
+}
+function zeigeOverlayPresetSpeichern() {
+  zeigeOverlay(`
+    <h2>${esc(TEXTE.einst.presetSpeichern)}</h2>
+    <div class="field"><label>${esc(TEXTE.einst.presetName)}</label><input id="presetNameInput" placeholder="z. B. Turnierregeln"></div>
+    <button class="btn btn-primary btn-block" style="margin-top:.8rem;" data-action="preset-speichern-bestaetigen">${esc(TEXTE.allg.speichern)}</button>
+    <button class="btn btn-ghost btn-block" data-action="overlay-schliessen">${esc(TEXTE.allg.abbrechen)}</button>`, true);
+}
+function zeigeOverlayBestaetigung(text, action, argHtml) {
+  zeigeOverlay(`
+    <p>${esc(text)}</p>
+    <div class="stack">
+      <button class="btn btn-danger btn-block" data-action="${action}" ${argHtml || ''}>${esc(TEXTE.allg.ja)}</button>
+      <button class="btn btn-ghost btn-block" data-action="overlay-schliessen">${esc(TEXTE.allg.nein)}</button>
+    </div>`, true);
+}
+
+/* =========================================================================
+   EXPORT / IMPORT / LOESCHEN
+   ========================================================================= */
+function datenExportieren() {
+  const daten = { spieler: SPIELER, spiele: SPIELE, einstellungen: EINSTELLUNGEN, presets: PRESETS, exportiertAm: Date.now() };
+  const blob = new Blob([JSON.stringify(daten, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = `kniffel-export-${new Date().toISOString().slice(0, 10)}.json`;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 4000);
+  toast('Export gestartet.');
+}
+async function datenImportierenAusDatei(datei) {
+  try {
+    const text = await datei.text();
+    const daten = JSON.parse(text);
+    if (Array.isArray(daten.spieler)) SPIELER = daten.spieler;
+    if (Array.isArray(daten.spiele)) SPIELE = daten.spiele;
+    if (daten.einstellungen) EINSTELLUNGEN = Object.assign(EINSTELLUNGEN, daten.einstellungen);
+    if (Array.isArray(daten.presets)) PRESETS = daten.presets;
+    await speichereAlles();
+    anwendenTheme();
+    toast('Import erfolgreich.');
+    render();
+  } catch (e) {
+    toast('Import fehlgeschlagen — Datei ungültig.');
+  }
+}
+async function allesLoeschen() {
+  SPIELER = []; SPIELE = []; AKTIV = null; PRESETS = [];
+  EINSTELLUNGEN = { coach: false, coachGefragt: false, darstellung: 'dunkel', haptik: true };
+  await speichereAlles();
+  anwendenTheme();
+  BILDSCHIRM = 'start';
+  schliesseOverlay();
+  render();
+}
+
+/* =========================================================================
+   EVENT-HANDLING
+   ========================================================================= */
+async function handleAction(action, el) {
+  const id = el.dataset.id, feld = el.dataset.feld, wert = el.dataset.wert, index = el.dataset.index;
+  switch (action) {
+    case 'start-neu':
+      NEU_AUSWAHL = []; NEU_REGELN = klon(STANDARD_REGELN); NEU_REGELN_PRESET = 'standard';
+      BILDSCHIRM = 'neu'; render(); break;
+    case 'start-fortsetzen': BILDSCHIRM = 'spiel'; render(); break;
+    case 'start-bestenliste': BEST_ZEITRAUM = 'alle'; BEST_TAB = 'tabelle'; BILDSCHIRM = 'bestenliste'; render(); break;
+    case 'start-spieler': BILDSCHIRM = 'spieler'; render(); break;
+    case 'start-einstellungen': BILDSCHIRM = 'einstellungen'; render(); break;
+    case 'nav-start': BILDSCHIRM = 'start'; render(); break;
+
+    case 'neu-toggle-spieler': {
+      const i = NEU_AUSWAHL.indexOf(id);
+      if (i === -1) NEU_AUSWAHL.push(id); else NEU_AUSWAHL.splice(i, 1);
+      render(); break;
+    }
+    case 'neu-rauf': {
+      const i = NEU_AUSWAHL.indexOf(id);
+      if (i > 0) { [NEU_AUSWAHL[i - 1], NEU_AUSWAHL[i]] = [NEU_AUSWAHL[i], NEU_AUSWAHL[i - 1]]; render(); }
+      break;
+    }
+    case 'neu-runter': {
+      const i = NEU_AUSWAHL.indexOf(id);
+      if (i !== -1 && i < NEU_AUSWAHL.length - 1) { [NEU_AUSWAHL[i + 1], NEU_AUSWAHL[i]] = [NEU_AUSWAHL[i], NEU_AUSWAHL[i + 1]]; render(); }
+      break;
+    }
+    case 'neu-preset-speichern': zeigeOverlayPresetSpeichern(); break;
+    case 'neu-starten': {
+      if (NEU_AUSWAHL.length === 0) break;
+      neuesSpielErstellen(NEU_AUSWAHL, NEU_REGELN);
+      await speichereAlles();
+      BILDSCHIRM = 'spiel'; render();
+      break;
+    }
+    case 'regel-fullhouse': NEU_REGELN.fullHouseBeiFuenfGleichen = !NEU_REGELN.fullHouseBeiFuenfGleichen; render(); break;
+
+    case 'spieler-neu-modal': zeigeOverlaySpielerForm(null); break;
+    case 'spieler-bearbeiten': zeigeOverlaySpielerForm(id); break;
+    case 'spieler-form-emoji': SPIELER_FORMULAR.emoji = wert; renderSpielerFormular(SPIELER.some(s => s.id === SPIELER_FORMULAR.id)); break;
+    case 'spieler-form-farbe': SPIELER_FORMULAR.farbe = wert; renderSpielerFormular(SPIELER.some(s => s.id === SPIELER_FORMULAR.id)); break;
+    case 'spieler-form-speichern': {
+      const input = document.getElementById('spielerNameInput');
+      const name = input ? input.value.trim() : '';
+      if (!name) { toast('Bitte einen Namen eingeben.'); break; }
+      SPIELER_FORMULAR.name = name;
+      const bestehenderIndex = SPIELER.findIndex(s => s.id === SPIELER_FORMULAR.id);
+      if (bestehenderIndex !== -1) SPIELER[bestehenderIndex] = SPIELER_FORMULAR; else SPIELER.push(SPIELER_FORMULAR);
+      await Store.set(SCHLUESSEL.spieler, SPIELER);
+      schliesseOverlay(); render(); break;
+    }
+    case 'spieler-form-loeschen': {
+      SPIELER = SPIELER.filter(s => s.id !== SPIELER_FORMULAR.id);
+      NEU_AUSWAHL = NEU_AUSWAHL.filter(x => x !== SPIELER_FORMULAR.id);
+      await Store.set(SCHLUESSEL.spieler, SPIELER);
+      schliesseOverlay(); render(); break;
+    }
+
+    case 'einst-coach': EINSTELLUNGEN.coach = !EINSTELLUNGEN.coach; await speichereEinstellungen(); render(); break;
+    case 'einst-haptik': EINSTELLUNGEN.haptik = !EINSTELLUNGEN.haptik; await speichereEinstellungen(); render(); break;
+    case 'einst-darstellung': EINSTELLUNGEN.darstellung = wert; anwendenTheme(); await speichereEinstellungen(); render(); break;
+    case 'daten-export': datenExportieren(); break;
+    case 'daten-import': { const inp = document.getElementById('importInput'); if (inp) inp.click(); break; }
+    case 'daten-loeschen': zeigeOverlayBestaetigung(TEXTE.einst.allesLoeschenWarnung, 'daten-loeschen-bestaetigt'); break;
+    case 'daten-loeschen-bestaetigt': await allesLoeschen(); break;
+    case 'preset-loeschen': PRESETS = PRESETS.filter(p => p.id !== id); await Store.set(SCHLUESSEL.presets, PRESETS); render(); break;
+    case 'preset-speichern-bestaetigen': {
+      const input = document.getElementById('presetNameInput');
+      const name = input ? input.value.trim() : '';
+      if (!name) { toast('Bitte einen Namen eingeben.'); break; }
+      const preset = { id: neueId(), name, regeln: klon(NEU_REGELN) };
+      PRESETS.push(preset); NEU_REGELN_PRESET = preset.id;
+      await Store.set(SCHLUESSEL.presets, PRESETS);
+      schliesseOverlay(); render(); break;
+    }
+
+    case 'resume-ja': schliesseOverlay(); BILDSCHIRM = 'spiel'; render(); if (!EINSTELLUNGEN.coachGefragt) zeigeOverlayCoachAngebot(); break;
+    case 'resume-nein': {
+      AKTIV = null; await speichereAktiv(); schliesseOverlay();
+      if (!EINSTELLUNGEN.coachGefragt) zeigeOverlayCoachAngebot();
+      break;
+    }
+    case 'coach-angebot-ja': EINSTELLUNGEN.coach = true; EINSTELLUNGEN.coachGefragt = true; await speichereEinstellungen(); schliesseOverlay(); render(); break;
+    case 'coach-angebot-nein': EINSTELLUNGEN.coachGefragt = true; await speichereEinstellungen(); schliesseOverlay(); break;
+
+    case 'undo': await undoSchritt(); break;
+    case 'modus-schnell': AKTIV.modus = 'schnell'; await speichereAktiv(); render(); break;
+    case 'modus-wuerfel': AKTIV.modus = 'wuerfel'; await speichereAktiv(); render(); break;
+
+    case 'feld-tippen-schnell': zeigeOverlayFeldSchnell(feld); break;
+    case 'feld-schnell-wert': {
+      const w = parseInt(wert, 10);
+      schliesseOverlay();
+      await eintragenSchnell(feld, w);
+      haptic(true);
+      break;
+    }
+    case 'feld-tippen-wuerfel': await eintragenWuerfel(feld); haptic(true); break;
+    case 'feld-korrektur': zeigeOverlayKorrektur(id, feld); break;
+    case 'feld-korrektur-wert': {
+      const w = parseInt(wert, 10);
+      korrekturSpeichernFeld(id, feld, w);
+      await speichereAktiv(); schliesseOverlay(); render(); break;
+    }
+    case 'feld-korrektur-loeschen': {
+      korrekturSpeichernFeld(id, feld, null);
+      await speichereAktiv(); schliesseOverlay(); render(); break;
+    }
+
+    case 'wuerfel-tippen': {
+      const i = parseInt(index, 10);
+      AKTIV.wuerfel[i] = (AKTIV.wuerfel[i] % 6) + 1;
+      AKTIV.wuerfelEingegeben = true;
+      await speichereAktiv(); haptic(); render(); break;
+    }
+    case 'wuerfel-runter': {
+      const i = parseInt(index, 10);
+      AKTIV.wuerfel[i] = AKTIV.wuerfel[i] === 1 ? 6 : AKTIV.wuerfel[i] - 1;
+      AKTIV.wuerfelEingegeben = true;
+      await speichereAktiv(); haptic(true); render(); break;
+    }
+    case 'wuerfel-naechster-wurf': {
+      if (AKTIV.wurfNummer < 3) AKTIV.wurfNummer++;
+      await speichereAktiv(); render(); break;
+    }
+
+    case 'ergebnis-teilen': await ergebnisTeilen(); break;
+    case 'best-zeitraum': BEST_ZEITRAUM = wert; render(); break;
+    case 'best-tab': BEST_TAB = wert; render(); break;
+
+    case 'overlay-schliessen': schliesseOverlay(); break;
+    default: break;
+  }
+}
+function handleChange(action, el) {
+  switch (action) {
+    case 'neu-preset-wahl': NEU_REGELN_PRESET = el.value; NEU_REGELN = regelnAusPresetName(el.value); render(); break;
+    case 'regel-joker': NEU_REGELN.kniffelJoker = el.value; render(); break;
+    case 'regel-zweiterbonus': NEU_REGELN.zweiterKniffelBonus = parseInt(el.value, 10); render(); break;
+    case 'regel-bonusschwelle': NEU_REGELN.bonusSchwelle = parseInt(el.value, 10) || 0; break;
+    case 'regel-bonushoehe': NEU_REGELN.bonusHoehe = parseInt(el.value, 10) || 0; break;
+    default: break;
+  }
+}
+function bindeEreignisse() {
+  const app = document.getElementById('app');
+  const overlays = document.getElementById('overlays');
+  let langDruckTimer = null, langDruckAusgefuehrt = false;
+
+  function pointerDown(root) {
+    return e => {
+      const ziel = e.target.closest('[data-longaction]');
+      if (!ziel) return;
+      langDruckAusgefuehrt = false;
+      langDruckTimer = setTimeout(() => {
+        langDruckAusgefuehrt = true;
+        handleAction(ziel.dataset.longaction, ziel);
+        // Ein Long-Press aendert oft das DOM unter dem Finger (z. B. weil ein
+        // Overlay aufgeht). Dadurch feuert der nachfolgende "click" manchmal
+        // gar nicht auf demselben Element, und das Unterdruecken dieses
+        // Klicks unten wuerde die Markierung nie zuruecksetzen - der naechste,
+        // voellig unabhaengige Tipp irgendwo in der App wuerde sonst
+        // verschluckt. Ein etwaiger Ghost-Click nach Long-Press feuert immer
+        // sofort im selben Moment, daher reicht ein kurzes Zeitfenster, um
+        // die Markierung zuverlaessig wieder abzuraeumen.
+        setTimeout(() => { langDruckAusgefuehrt = false; }, 60);
+      }, 500);
+    };
+  }
+  function pointerAuf() { clearTimeout(langDruckTimer); }
+
+  [app, overlays].forEach(root => {
+    root.addEventListener('pointerdown', pointerDown(root));
+    root.addEventListener('pointerup', pointerAuf);
+    root.addEventListener('pointerleave', pointerAuf);
+    root.addEventListener('pointercancel', pointerAuf);
+    root.addEventListener('click', e => {
+      if (langDruckAusgefuehrt) { langDruckAusgefuehrt = false; e.preventDefault(); e.stopPropagation(); return; }
+      if (root === overlays && e.target.classList.contains('overlay')) { schliesseOverlay(); return; }
+      const ziel = e.target.closest('[data-action]');
+      if (!ziel) return;
+      handleAction(ziel.dataset.action, ziel);
+    });
+    root.addEventListener('change', e => {
+      const ziel = e.target.closest('[data-action]');
+      if (!ziel) return;
+      handleChange(ziel.dataset.action, ziel);
+    });
+  });
+  document.addEventListener('change', e => {
+    if (e.target && e.target.id === 'importInput' && e.target.files && e.target.files[0]) {
+      datenImportierenAusDatei(e.target.files[0]);
+      e.target.value = '';
+    }
+  });
+}
+
+/* =========================================================================
+   START — Boot
+   ========================================================================= */
+async function init() {
+  SPIELER = await Store.get(SCHLUESSEL.spieler, []);
+  SPIELE = await Store.get(SCHLUESSEL.spiele, []);
+  AKTIV = await Store.get(SCHLUESSEL.aktiv, null);
+  const gespEinst = await Store.get(SCHLUESSEL.einstellungen, {});
+  EINSTELLUNGEN = Object.assign({ coach: false, coachGefragt: false, darstellung: 'dunkel', haptik: true }, gespEinst);
+  PRESETS = await Store.get(SCHLUESSEL.presets, []);
+  anwendenTheme();
+  bindeEreignisse();
+  render();
+  nachBootPruefen();
+}
+function nachBootPruefen() {
+  if (AKTIV && !AKTIV.beendet) { zeigeOverlayResume(); return; }
+  if (!EINSTELLUNGEN.coachGefragt) zeigeOverlayCoachAngebot();
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+else init();
+</script>
+</body>
+</html>
