@@ -14,19 +14,19 @@
 <style>
 :root{
   --bg:#f4f2ec; --surface:#ffffff; --surface-2:#eceae2; --text:#1b1b1a; --muted:#6b6a63;
-  --accent:#b5860f; --accent-text:#1b1b1a; --active-row:#fff2cf; --border:transparent;
+  --accent:#b5860f; --accent-text:#1b1b1a; --active-row:#cfe9ff; --gesamt-bg:#fdeecb; --border:transparent;
   --danger:#a3372c; --good:#3a7d4f; --shadow:0 1px 3px rgba(0,0,0,.08);
 }
 :root:not([data-theme="light"]){
   @media (prefers-color-scheme: dark){
     --bg:#14161b; --surface:#1e2129; --surface-2:#262a34; --text:#f2f0e8; --muted:#9aa0ac;
-    --accent:#e8b93f; --accent-text:#14161b; --active-row:#3a3018; --border:transparent;
+    --accent:#e8b93f; --accent-text:#14161b; --active-row:#1f4a68; --gesamt-bg:#3a3018; --border:transparent;
     --danger:#e2685a; --good:#5fbf7f; --shadow:0 1px 3px rgba(0,0,0,.4);
   }
 }
 :root[data-theme="dark"]{
   --bg:#14161b; --surface:#1e2129; --surface-2:#262a34; --text:#f2f0e8; --muted:#9aa0ac;
-  --accent:#e8b93f; --accent-text:#14161b; --active-row:#3a3018; --border:transparent;
+  --accent:#e8b93f; --accent-text:#14161b; --active-row:#1f4a68; --gesamt-bg:#3a3018; --border:transparent;
   --danger:#e2685a; --good:#5fbf7f; --shadow:0 1px 3px rgba(0,0,0,.4);
 }
 *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
@@ -52,6 +52,7 @@ button{font-family:inherit;}
 }
 .iconbtn:active{ transform:scale(.92); background:var(--surface-2); }
 .iconbtn svg{ width:22px; height:22px; }
+.btn svg{ width:20px; height:20px; flex-shrink:0; }
 .btn{
   border:none; border-radius:16px; padding:1rem 1.2rem; font-size:1.05rem; font-weight:600;
   background:var(--surface); color:var(--text); display:flex; align-items:center; justify-content:center;
@@ -88,15 +89,19 @@ button{font-family:inherit;}
 .block-band.band-oben{ flex:6 1 0; }
 .block-band.band-mitte{ flex:2.2 1 0; background:var(--surface-2); }
 .block-band.band-unten{ flex:7 1 0; }
-.block-band.band-gesamt{ flex:1.7 1 0; background:var(--active-row); }
+.block-band.band-gesamt{ flex:1.7 1 0; background:var(--gesamt-bg); }
 .block-cell{ display:flex; align-items:center; justify-content:center; min-width:0; }
 .feldname-cell{
-  display:flex; align-items:center; font-weight:600; font-size:.76rem; letter-spacing:-.01em;
+  display:flex; align-items:center; gap:.35rem; font-weight:700; font-size:1rem; letter-spacing:-.01em;
   padding-left:.3rem; color:var(--text); min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
 }
+.feld-wuerfel-icon{ width:1.15em; height:1.15em; flex-shrink:0; color:var(--muted); }
 .spieler-kopf{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0; font-weight:700; border-radius:10px; min-width:0; }
 .spieler-kopf .em{ font-size:1.1rem; line-height:1.1; }
 .spieler-kopf .nm{ font-size:.68rem; line-height:1.15; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:100%; }
+.kopf-delta{ font-size:.66rem; font-weight:800; line-height:1.2; }
+.kopf-delta.gut{ color:var(--good); }
+.kopf-delta.schlecht{ color:var(--danger); }
 .spalte-aktiv{ background:var(--active-row); border-radius:8px; }
 .zelle-btn{
   width:100%; height:100%; border:none; background:transparent; color:var(--text); border-radius:9px;
@@ -105,13 +110,19 @@ button{font-family:inherit;}
 .zelle-btn:active{ background:var(--surface-2); }
 .zelle-leer{ color:var(--muted); font-weight:400; }
 .zelle-empf{ background:var(--accent); color:var(--accent-text); border-radius:9px; }
-.zelle-delta{ font-size:.6rem; font-weight:800; opacity:.9; }
-.zelle-delta.gut{ color:var(--good); }
-.zelle-delta.schlecht{ color:var(--danger); }
 .bonus-zelle{ display:flex; align-items:center; justify-content:center; gap:.3rem; flex-wrap:wrap; }
 .bonus-erreicht{ color:var(--good); font-weight:800; font-size:1.05rem; }
 .bonus-puffer{ font-size:.62rem; color:var(--muted); font-weight:600; }
 .gesamt-wert{ font-size:1.4rem; font-weight:800; }
+.konfetti-schicht{ position:fixed; inset:0; pointer-events:none; overflow:hidden; z-index:200; }
+.konfetti-stueck{
+  position:absolute; top:-10vh; left:0; will-change:transform, opacity;
+  animation-name:konfetti-fall; animation-timing-function:ease-in; animation-fill-mode:forwards;
+}
+@keyframes konfetti-fall{
+  0%{ transform:translate(0,0) rotate(0deg); opacity:1; }
+  100%{ transform:translate(var(--drift), 125vh) rotate(var(--drehung)); opacity:.9; }
+}
 .modeswitch{ display:flex; background:var(--surface-2); border-radius:14px; padding:4px; gap:4px; flex:0 0 auto; }
 .modeswitch button{ flex:1; border:none; background:transparent; color:var(--muted); border-radius:10px; padding:.4rem; font-weight:600; }
 .modeswitch button.aktiv{ background:var(--surface); color:var(--text); box-shadow:var(--shadow);}
@@ -198,7 +209,7 @@ const TEXTE = {
   neu: {
     titel: "Neues Spiel",
     spielerWaehlen: "Spieler wählen",
-    neuerSpieler: "+ Neuer Spieler",
+    neuerSpieler: "Neuer Spieler",
     regelvariante: "Regelvariante",
     reihenfolge: "Reihenfolge",
     starten: "Spiel starten",
@@ -730,7 +741,7 @@ let NEU_REGELN = null;
 let NEU_REGELN_PRESET = 'standard';
 
 const FARB_OPTIONEN = ['#e8b93f', '#5fbf7f', '#5a9bd8', '#e2685a', '#c17ad1', '#f0955e', '#59c2c2', '#c2c2c2'];
-const EMOJI_OPTIONEN = ['🎲', '🦊', '🐼', '🐸', '🦁', '🐵', '🐧', '🦄', '🐙', '🐳', '🐺', '🦉'];
+const EMOJI_OPTIONEN = ['🎲', '🦊', '🐼', '🐸', '🦁', '🐵', '🐧', '🦄', '🐙', '🐳', '🐺', '🦉', '👸', '🤴'];
 
 const ICONS = {
   zurueck: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>',
@@ -824,6 +835,7 @@ async function eintragenSchnell(feld, wert) {
   schnappschussSpeichern();
   const karte = aktiveKarte();
   karte.felder[feld] = wert;
+  if (feld === 'kniffel' && wert === 50) zeigeKniffelKonfetti();
   naechsterSpieler();
   await nachEintragPruefen();
 }
@@ -839,12 +851,41 @@ async function eintragenWuerfel(feld) {
   const empf = empfehlung(wuerfel, karte, regeln, AKTIV.wurfNummer);
   karte.felder[feld] = punkte;
   if (bonus > 0) karte.kniffelBonusAnzahl = (karte.kniffelBonusAnzahl || 0) + 1;
+  if ((feld === 'kniffel' && punkte === 50) || bonus > 0) zeigeKniffelKonfetti();
   karte.wuerfeLog.push({
     wuerfel, gewaehltesFeld: feld, sofortGewaehlt: punkte,
     empfehlungsFeld: empf ? empf.feldEmpfehlung : null, sofortEmpfehlung: empf ? empf.sofortwert : null,
   });
   naechsterSpieler();
   await nachEintragPruefen();
+}
+// Konfetti-Explosion bei einem Kniffel: 100 🎉-Emoji fallen ueber ca. 3
+// Sekunden vom oberen Bildschirmrand nach unten aus dem Bild, mit
+// zufaelliger Startposition, Drift, Drehung und leicht versetztem Start
+// fuer einen natuerlichen "Explosions"-Effekt.
+function zeigeKniffelKonfetti() {
+  const schicht = document.createElement('div');
+  schicht.className = 'konfetti-schicht';
+  for (let i = 0; i < 100; i++) {
+    const stueck = document.createElement('span');
+    stueck.className = 'konfetti-stueck';
+    stueck.textContent = '🎉';
+    const startX = Math.random() * 100;
+    const drift = (Math.random() - 0.5) * 50;
+    const dauer = 2.4 + Math.random() * 0.4;
+    const verzoegerung = Math.random() * 0.3;
+    const groesse = 1 + Math.random() * 1.3;
+    const drehung = (Math.random() < 0.5 ? -1 : 1) * (360 + Math.random() * 720);
+    stueck.style.left = startX + 'vw';
+    stueck.style.fontSize = groesse + 'rem';
+    stueck.style.setProperty('--drift', drift + 'vw');
+    stueck.style.setProperty('--drehung', drehung + 'deg');
+    stueck.style.animationDuration = dauer + 's';
+    stueck.style.animationDelay = verzoegerung + 's';
+    schicht.appendChild(stueck);
+  }
+  document.body.appendChild(schicht);
+  setTimeout(() => schicht.remove(), 3300);
 }
 async function nachEintragPruefen() {
   const alleVoll = AKTIV.reihenfolge.every(id => karteIstVoll(AKTIV.karten[id]));
@@ -1036,18 +1077,43 @@ function aktuelleEmpfehlung() {
 }
 // Tempo-Anzeige im oberen Teil: im Schnitt braucht man drei Wuerfel einer
 // Zahl, um am Ende auf die 63 zu kommen (3x(1+2+3+4+5+6)=63). Die Differenz
-// zum eingetragenen Wert zeigt sofort, ob ein Feld den Bonus naeher gebracht
-// oder gekostet hat, z. B. eine einzelne 1 im Einser-Feld => 1-3 = -2.
+// zum eingetragenen Wert zeigt, ob ein Feld den Bonus naeher gebracht oder
+// gekostet hat, z. B. eine einzelne 1 im Einser-Feld => 1-3 = -2. Angezeigt
+// wird nicht pro Feld, sondern aufsummiert ueber alle bereits eingetragenen
+// oberen Felder direkt neben dem Spielernamen - noch offene Felder zaehlen
+// dabei nicht mit.
 function paceDelta(feld, wert) {
   const zahl = feldWert(feld);
   return zahl === null ? null : wert - zahl * 3;
 }
+function kumulierterTempoDelta(karte) {
+  return OBERE_FELDER.reduce((summe, feld) => {
+    const wert = karte.felder[feld];
+    return wert === null ? summe : summe + paceDelta(feld, wert);
+  }, 0);
+}
+function alleObereGefuellt(karte) {
+  return OBERE_FELDER.every(k => karte.felder[k] !== null);
+}
+// Kleines Wuerfel-Icon mit der passenden Augenzahl, nur fuer die Feldnamen
+// im oberen Teil (Einser..Sechser) - im unteren Teil gibt es keine feste
+// Augenzahl, dort steht nur der Name.
+function wuerfelIconSvg(n) {
+  const positionen = {
+    1: [[50, 50]],
+    2: [[30, 30], [70, 70]],
+    3: [[30, 30], [50, 50], [70, 70]],
+    4: [[30, 30], [70, 30], [30, 70], [70, 70]],
+    5: [[30, 30], [70, 30], [50, 50], [30, 70], [70, 70]],
+    6: [[30, 26], [70, 26], [30, 50], [70, 50], [30, 74], [70, 74]],
+  };
+  const pips = (positionen[n] || []).map(([x, y]) => `<circle cx="${x}" cy="${y}" r="9" fill="currentColor"/>`).join('');
+  return `<svg class="feld-wuerfel-icon" viewBox="0 0 100 100" aria-hidden="true"><rect x="5" y="5" width="90" height="90" rx="20" fill="none" stroke="currentColor" stroke-width="8"/>${pips}</svg>`;
+}
 function zelleFeldInhalt(id, key, ist, karte, regeln, gueltigZiel, empf) {
   const wert = karte.felder[key];
   if (wert !== null) {
-    const delta = OBERE_FELDER.includes(key) ? paceDelta(key, wert) : null;
-    const deltaHtml = delta === null ? '' : `<span class="zelle-delta font-num ${delta >= 0 ? 'gut' : 'schlecht'}">${delta >= 0 ? '+' : ''}${delta}</span>`;
-    return `<button class="zelle-btn font-num" data-longaction="feld-korrektur" data-id="${id}" data-feld="${key}"><span>${wert}</span>${deltaHtml}</button>`;
+    return `<button class="zelle-btn font-num" data-longaction="feld-korrektur" data-id="${id}" data-feld="${key}">${wert}</button>`;
   }
   if (!ist) return `<span class="zelle-leer">–</span>`;
   if (AKTIV.modus === 'schnell') return `<button class="zelle-btn zelle-leer" data-action="feld-tippen-schnell" data-feld="${key}">–</button>`;
@@ -1066,11 +1132,15 @@ SCREENS.spiel = function () {
   const empf = aktuelleEmpfehlung();
   const gueltigZiel = AKTIV.modus === 'wuerfel' && AKTIV.wuerfelEingegeben
     ? gueltigeZielfelder(AKTIV.wuerfel, aktiveKarte(), regeln) : [];
-  const gridCols = `minmax(56px,1.15fr) repeat(${AKTIV.reihenfolge.length},1fr)`;
+  const gridCols = `minmax(76px,1.3fr) repeat(${AKTIV.reihenfolge.length},1fr)`;
 
   const kopfZellen = AKTIV.reihenfolge.map(id => {
     const s = spielerById(id); const ist = id === amZugId;
-    return `<div class="spieler-kopf ${ist ? 'spalte-aktiv' : ''}" style="${ist ? `color:${s.farbe}` : ''}"><span class="em">${s.emoji}</span><span class="nm">${esc(s.name)}</span></div>`;
+    const delta = kumulierterTempoDelta(AKTIV.karten[id]);
+    return `<div class="spieler-kopf ${ist ? 'spalte-aktiv' : ''}" style="${ist ? `color:${s.farbe}` : ''}">
+      <span class="em">${s.emoji}</span><span class="nm">${esc(s.name)}</span>
+      <span class="kopf-delta font-num ${delta >= 0 ? 'gut' : 'schlecht'}">${delta >= 0 ? '+' : ''}${delta}</span>
+    </div>`;
   }).join('');
   const kopfHtml = `<div class="block-header" style="grid-template-columns:${gridCols};"><div></div>${kopfZellen}</div>`;
 
@@ -1080,7 +1150,9 @@ SCREENS.spiel = function () {
         const karte = AKTIV.karten[id]; const ist = id === amZugId;
         return `<div class="block-cell ${ist ? 'spalte-aktiv' : ''}">${zelleFeldInhalt(id, zeile.key, ist, karte, regeln, gueltigZiel, empf)}</div>`;
       }).join('');
-      return `<div class="feldname-cell">${esc(TEXTE.feld[zeile.key])}</div>${zellen}`;
+      const istOben = OBERE_FELDER.includes(zeile.key);
+      const icon = istOben ? wuerfelIconSvg(feldWert(zeile.key)) : '';
+      return `<div class="feldname-cell">${icon}<span>${esc(TEXTE.feld[zeile.key])}</span></div>${zellen}`;
     }
     if (zeile.typ === 'zwischensumme') {
       const zellen = AKTIV.reihenfolge.map(id => `<div class="block-cell font-num ${id === amZugId ? 'spalte-aktiv' : ''}">${summeOben(AKTIV.karten[id])}</div>`).join('');
@@ -1088,10 +1160,16 @@ SCREENS.spiel = function () {
     }
     if (zeile.typ === 'bonus') {
       const zellen = AKTIV.reihenfolge.map(id => {
-        const st = bonusStand(AKTIV.karten[id], regeln);
-        const inhalt = st.erreicht
-          ? `<div class="bonus-zelle"><span class="bonus-erreicht font-num">+${regeln.bonusHoehe}</span>${st.puffer > 0 ? `<span class="bonus-puffer font-num">${esc(TEXTE.block.puffer(st.puffer))}</span>` : ''}</div>`
-          : `<span class="muted font-num" style="font-size:.78rem;">${esc(TEXTE.block.nochOffen(st.fehlt))}</span>`;
+        const karte = AKTIV.karten[id];
+        const st = bonusStand(karte, regeln);
+        let inhalt;
+        if (st.erreicht) {
+          inhalt = `<div class="bonus-zelle"><span class="bonus-erreicht font-num">+${regeln.bonusHoehe}</span>${st.puffer > 0 ? `<span class="bonus-puffer font-num">${esc(TEXTE.block.puffer(st.puffer))}</span>` : ''}</div>`;
+        } else if (alleObereGefuellt(karte)) {
+          inhalt = `<span class="muted font-num" style="font-size:.9rem;">0</span>`;
+        } else {
+          inhalt = `<span class="muted font-num" style="font-size:.78rem;">${esc(TEXTE.block.nochOffen(st.fehlt))}</span>`;
+        }
         return `<div class="block-cell ${id === amZugId ? 'spalte-aktiv' : ''}">${inhalt}</div>`;
       }).join('');
       return `<div class="feldname-cell">${esc(TEXTE.feld.bonus)}</div>${zellen}`;
@@ -1417,6 +1495,14 @@ function zeigeOverlayCoachAngebot() {
     </div>`, true);
 }
 let SPIELER_FORMULAR = null;
+// Sichert den aktuell im Eingabefeld getippten Namen ins Formular-Objekt,
+// BEVOR das Formular fuer eine andere Auswahl (Emoji/Farbe) neu gezeichnet
+// wird - sonst wuerde ein noch nicht gespeicherter Name beim Neuzeichnen
+// verloren gehen, weil renderSpielerFormular() wieder vom alten Objekt liest.
+function sichereFormularEingaben() {
+  const input = document.getElementById('spielerNameInput');
+  if (input && SPIELER_FORMULAR) SPIELER_FORMULAR.name = input.value;
+}
 function zeigeOverlaySpielerForm(bestehenderId) {
   const bestehend = bestehenderId ? spielerById(bestehenderId) : null;
   SPIELER_FORMULAR = bestehend ? klon(bestehend) : { id: neueId(), name: '', farbe: FARB_OPTIONEN[SPIELER.length % FARB_OPTIONEN.length], emoji: EMOJI_OPTIONEN[SPIELER.length % EMOJI_OPTIONEN.length] };
@@ -1551,8 +1637,8 @@ async function handleAction(action, el) {
 
     case 'spieler-neu-modal': zeigeOverlaySpielerForm(null); break;
     case 'spieler-bearbeiten': zeigeOverlaySpielerForm(id); break;
-    case 'spieler-form-emoji': SPIELER_FORMULAR.emoji = wert; renderSpielerFormular(SPIELER.some(s => s.id === SPIELER_FORMULAR.id)); break;
-    case 'spieler-form-farbe': SPIELER_FORMULAR.farbe = wert; renderSpielerFormular(SPIELER.some(s => s.id === SPIELER_FORMULAR.id)); break;
+    case 'spieler-form-emoji': sichereFormularEingaben(); SPIELER_FORMULAR.emoji = wert; renderSpielerFormular(SPIELER.some(s => s.id === SPIELER_FORMULAR.id)); break;
+    case 'spieler-form-farbe': sichereFormularEingaben(); SPIELER_FORMULAR.farbe = wert; renderSpielerFormular(SPIELER.some(s => s.id === SPIELER_FORMULAR.id)); break;
     case 'spieler-form-speichern': {
       const input = document.getElementById('spielerNameInput');
       const name = input ? input.value.trim() : '';
