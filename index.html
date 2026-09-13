@@ -67,47 +67,68 @@ button{font-family:inherit;}
 .card{ background:var(--surface); border-radius:20px; padding:1.1rem; box-shadow:var(--shadow); }
 .muted{ color:var(--muted); }
 .scr{ flex:1; padding:0 1rem 2rem; display:flex; flex-direction:column; gap:1rem; overflow-y:auto;}
+.scr-spiel{ flex:1; padding:0 .6rem calc(.5rem + env(safe-area-inset-bottom)); display:flex; flex-direction:column; gap:.4rem; overflow:hidden; min-height:0; }
 .center-scr{ flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; padding:2rem 1.2rem;}
 .brand{ display:flex; flex-direction:column; align-items:center; gap:.3rem; margin-bottom:1rem;}
 .brand .diehero{ width:88px; height:88px; border-radius:22px; background:var(--surface); display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow);}
 .brand h1{ font-size:1.8rem; margin:.4rem 0 0; }
 .startlist{ width:100%; max-width:420px; display:flex; flex-direction:column; gap:.7rem; }
 
-/* Spielblock */
-.block-wrap{ flex:1; overflow:auto; border-radius:20px; background:var(--surface); box-shadow:var(--shadow); }
-table.block{ border-collapse:collapse; width:100%; min-width:100%; }
-table.block th, table.block td{ padding:.55rem .6rem; text-align:center; font-size:1rem; }
-table.block thead th{ position:sticky; top:0; background:var(--surface); z-index:2; padding-top:.8rem; }
-table.block td.feldname, table.block th.feldname{
-  text-align:left; position:sticky; left:0; background:var(--surface); z-index:1; min-width:118px; font-weight:600;
+/* Spielblock: vier klar getrennte Zonen (Oben / Zwischensumme+Bonus / Unten /
+   Gesamt), die den verfuegbaren Platz per Flex/Grid exakt ausfuellen. So ist
+   nie Scrollen noetig - egal ob das iPad hoch oder quer gehalten wird, die
+   Zeilen werden einfach proportional kleiner oder groesser. */
+.block-stack{ flex:1; display:flex; flex-direction:column; gap:.35rem; min-height:0; }
+.block-header{ display:grid; column-gap:.3rem; flex:0 0 auto; }
+.block-band{
+  display:grid; grid-auto-rows:1fr; column-gap:.3rem; row-gap:1px;
+  background:var(--surface); border-radius:14px; box-shadow:var(--shadow);
+  overflow:hidden; padding:.15rem .25rem;
 }
-table.block thead th.feldname{ z-index:3; }
-table.block tr.section-gap td{ height:.5rem; padding:0; }
-.spielername{ display:flex; flex-direction:column; align-items:center; gap:.15rem; font-weight:700; }
-.spielername .em{ font-size:1.3rem; }
-th.aktiv, td.aktiv{ background:var(--active-row); }
-.zelle-btn{ width:100%; min-height:56px; border:none; background:transparent; color:var(--text); border-radius:12px; font-size:1.15rem; font-weight:700; }
+.block-band.band-oben{ flex:6 1 0; }
+.block-band.band-mitte{ flex:2.2 1 0; background:var(--surface-2); }
+.block-band.band-unten{ flex:7 1 0; }
+.block-band.band-gesamt{ flex:1.7 1 0; background:var(--active-row); }
+.block-cell{ display:flex; align-items:center; justify-content:center; min-width:0; }
+.feldname-cell{
+  display:flex; align-items:center; font-weight:600; font-size:.76rem; letter-spacing:-.01em;
+  padding-left:.3rem; color:var(--text); min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+.spieler-kopf{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0; font-weight:700; border-radius:10px; min-width:0; }
+.spieler-kopf .em{ font-size:1.1rem; line-height:1.1; }
+.spieler-kopf .nm{ font-size:.68rem; line-height:1.15; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:100%; }
+.spalte-aktiv{ background:var(--active-row); border-radius:8px; }
+.zelle-btn{
+  width:100%; height:100%; border:none; background:transparent; color:var(--text); border-radius:9px;
+  font-size:1.02rem; font-weight:700; display:flex; align-items:center; justify-content:center; gap:.2rem; min-width:0;
+}
 .zelle-btn:active{ background:var(--surface-2); }
 .zelle-leer{ color:var(--muted); font-weight:400; }
-.zelle-empf{ background:var(--accent); color:var(--accent-text); border-radius:12px; }
-.summen-row td{ font-weight:800; border-top:2px solid var(--surface-2); }
-.bonus-hint{ font-size:.72rem; font-weight:500; }
-.modeswitch{ display:flex; background:var(--surface-2); border-radius:14px; padding:4px; gap:4px; }
-.modeswitch button{ flex:1; border:none; background:transparent; color:var(--muted); border-radius:10px; padding:.55rem; font-weight:600; }
+.zelle-empf{ background:var(--accent); color:var(--accent-text); border-radius:9px; }
+.zelle-delta{ font-size:.6rem; font-weight:800; opacity:.9; }
+.zelle-delta.gut{ color:var(--good); }
+.zelle-delta.schlecht{ color:var(--danger); }
+.bonus-zelle{ display:flex; align-items:center; justify-content:center; gap:.3rem; flex-wrap:wrap; }
+.bonus-erreicht{ color:var(--good); font-weight:800; font-size:1.05rem; }
+.bonus-puffer{ font-size:.62rem; color:var(--muted); font-weight:600; }
+.gesamt-wert{ font-size:1.4rem; font-weight:800; }
+.modeswitch{ display:flex; background:var(--surface-2); border-radius:14px; padding:4px; gap:4px; flex:0 0 auto; }
+.modeswitch button{ flex:1; border:none; background:transparent; color:var(--muted); border-radius:10px; padding:.4rem; font-weight:600; }
 .modeswitch button.aktiv{ background:var(--surface); color:var(--text); box-shadow:var(--shadow);}
-.undo-bar{ display:flex; justify-content:space-between; align-items:center; }
 
-/* Wuerfelmodus */
-.wuerfel-reihe{ display:flex; gap:.6rem; justify-content:center; }
+/* Wuerfelmodus: kompaktes Panel, damit der Block darunter nicht schrumpfen muss */
+.wuerfel-panel{ flex:0 0 auto; background:var(--surface); border-radius:14px; box-shadow:var(--shadow); padding:.4rem .5rem; display:flex; flex-direction:column; gap:.3rem; }
+.wuerfel-reihe{ display:flex; gap:.4rem; justify-content:center; }
 .wuerfel{
-  width:64px; height:64px; border-radius:18px; background:var(--surface); box-shadow:var(--shadow);
-  display:flex; align-items:center; justify-content:center; font-size:1.9rem; font-weight:800; color:var(--text);
+  width:15%; max-width:52px; aspect-ratio:1; border-radius:12px; background:var(--surface-2);
+  display:flex; align-items:center; justify-content:center; font-size:1.3rem; font-weight:800; color:var(--text);
   border:2px solid transparent;
 }
 .wuerfel.gehalten{ border-color:var(--accent); color:var(--accent); }
-.coach-box{ background:var(--surface); border-radius:18px; padding:1rem; box-shadow:var(--shadow); }
-.coach-box.aus{ opacity:.55; }
-.chip{ display:inline-flex; align-items:center; padding:.2rem .6rem; border-radius:999px; background:var(--surface-2); font-size:.78rem; font-weight:600; }
+.coach-line{ display:flex; align-items:center; gap:.4rem; flex-wrap:wrap; font-size:.78rem; }
+.coach-line.aus{ opacity:.55; }
+.coach-line b{ font-weight:700; }
+.chip{ display:inline-flex; align-items:center; padding:.2rem .6rem; border-radius:999px; background:var(--surface-2); font-size:.72rem; font-weight:600; white-space:nowrap; }
 .werte-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:.6rem; }
 .werte-grid button{ border:none; border-radius:14px; padding:1rem .5rem; font-size:1.3rem; font-weight:800; background:var(--surface-2); color:var(--text); min-height:56px; }
 .werte-grid button:active{ transform:scale(.95); }
@@ -996,18 +1017,47 @@ SCREENS.einstellungen = function () {
 };
 
 /* ---------- Spielblock (Hauptbildschirm) ---------- */
-const BLOCK_ZEILEN = [
-  { typ: 'feld', key: 'eins' }, { typ: 'feld', key: 'zwei' }, { typ: 'feld', key: 'drei' },
-  { typ: 'feld', key: 'vier' }, { typ: 'feld', key: 'fuenf' }, { typ: 'feld', key: 'sechs' },
-  { typ: 'zwischensumme' }, { typ: 'bonus' },
-  { typ: 'feld', key: 'dreierpasch' }, { typ: 'feld', key: 'viererpasch' }, { typ: 'feld', key: 'fullhouse' },
-  { typ: 'feld', key: 'kleinestrasse' }, { typ: 'feld', key: 'grossestrasse' },
-  { typ: 'feld', key: 'kniffel' }, { typ: 'feld', key: 'chance' },
-  { typ: 'gesamt' },
+const BLOCK_BAENDE = [
+  { klasse: 'band-oben', zeilen: [
+    { typ: 'feld', key: 'eins' }, { typ: 'feld', key: 'zwei' }, { typ: 'feld', key: 'drei' },
+    { typ: 'feld', key: 'vier' }, { typ: 'feld', key: 'fuenf' }, { typ: 'feld', key: 'sechs' },
+  ] },
+  { klasse: 'band-mitte', zeilen: [{ typ: 'zwischensumme' }, { typ: 'bonus' }] },
+  { klasse: 'band-unten', zeilen: [
+    { typ: 'feld', key: 'dreierpasch' }, { typ: 'feld', key: 'viererpasch' }, { typ: 'feld', key: 'fullhouse' },
+    { typ: 'feld', key: 'kleinestrasse' }, { typ: 'feld', key: 'grossestrasse' },
+    { typ: 'feld', key: 'kniffel' }, { typ: 'feld', key: 'chance' },
+  ] },
+  { klasse: 'band-gesamt', zeilen: [{ typ: 'gesamt' }] },
 ];
 function aktuelleEmpfehlung() {
   if (!AKTIV || AKTIV.modus !== 'wuerfel' || !AKTIV.wuerfelEingegeben) return null;
   return empfehlung(AKTIV.wuerfel, aktiveKarte(), AKTIV.regeln, AKTIV.wurfNummer);
+}
+// Tempo-Anzeige im oberen Teil: im Schnitt braucht man drei Wuerfel einer
+// Zahl, um am Ende auf die 63 zu kommen (3x(1+2+3+4+5+6)=63). Die Differenz
+// zum eingetragenen Wert zeigt sofort, ob ein Feld den Bonus naeher gebracht
+// oder gekostet hat, z. B. eine einzelne 1 im Einser-Feld => 1-3 = -2.
+function paceDelta(feld, wert) {
+  const zahl = feldWert(feld);
+  return zahl === null ? null : wert - zahl * 3;
+}
+function zelleFeldInhalt(id, key, ist, karte, regeln, gueltigZiel, empf) {
+  const wert = karte.felder[key];
+  if (wert !== null) {
+    const delta = OBERE_FELDER.includes(key) ? paceDelta(key, wert) : null;
+    const deltaHtml = delta === null ? '' : `<span class="zelle-delta font-num ${delta >= 0 ? 'gut' : 'schlecht'}">${delta >= 0 ? '+' : ''}${delta}</span>`;
+    return `<button class="zelle-btn font-num" data-longaction="feld-korrektur" data-id="${id}" data-feld="${key}"><span>${wert}</span>${deltaHtml}</button>`;
+  }
+  if (!ist) return `<span class="zelle-leer">–</span>`;
+  if (AKTIV.modus === 'schnell') return `<button class="zelle-btn zelle-leer" data-action="feld-tippen-schnell" data-feld="${key}">–</button>`;
+  if (!AKTIV.wuerfelEingegeben) return `<span class="zelle-leer">–</span>`;
+  if (gueltigZiel.includes(key)) {
+    const punkte = berechnePunkte(key, AKTIV.wuerfel, karte, regeln);
+    const hervorheben = EINSTELLUNGEN.coach && empf && empf.feldEmpfehlung === key;
+    return `<button class="zelle-btn font-num ${hervorheben ? 'zelle-empf' : ''}" data-action="feld-tippen-wuerfel" data-feld="${key}">${punkte}</button>`;
+  }
+  return `<span class="zelle-leer" style="opacity:.3;">–</span>`;
 }
 SCREENS.spiel = function () {
   if (!AKTIV) { BILDSCHIRM = 'start'; return SCREENS.start(); }
@@ -1016,105 +1066,91 @@ SCREENS.spiel = function () {
   const empf = aktuelleEmpfehlung();
   const gueltigZiel = AKTIV.modus === 'wuerfel' && AKTIV.wuerfelEingegeben
     ? gueltigeZielfelder(AKTIV.wuerfel, aktiveKarte(), regeln) : [];
+  const gridCols = `minmax(56px,1.15fr) repeat(${AKTIV.reihenfolge.length},1fr)`;
 
-  const kopf = AKTIV.reihenfolge.map(id => {
-    const s = spielerById(id);
-    const ist = id === amZugId;
-    return `<th class="${ist ? 'aktiv' : ''}"><div class="spielername" style="${ist ? `color:${s.farbe}` : ''}"><span class="em">${s.emoji}</span><span>${esc(s.name)}</span></div></th>`;
+  const kopfZellen = AKTIV.reihenfolge.map(id => {
+    const s = spielerById(id); const ist = id === amZugId;
+    return `<div class="spieler-kopf ${ist ? 'spalte-aktiv' : ''}" style="${ist ? `color:${s.farbe}` : ''}"><span class="em">${s.emoji}</span><span class="nm">${esc(s.name)}</span></div>`;
   }).join('');
+  const kopfHtml = `<div class="block-header" style="grid-template-columns:${gridCols};"><div></div>${kopfZellen}</div>`;
 
-  const zeilenHtml = BLOCK_ZEILEN.map(zeile => {
-    if (zeile.typ === 'zwischensumme' || zeile.typ === 'bonus' || zeile.typ === 'gesamt') {
-      const label = zeile.typ === 'zwischensumme' ? TEXTE.feld.zwischensumme : zeile.typ === 'bonus' ? TEXTE.feld.bonus : TEXTE.feld.gesamt;
+  function zeileHtml(zeile) {
+    if (zeile.typ === 'feld') {
       const zellen = AKTIV.reihenfolge.map(id => {
         const karte = AKTIV.karten[id]; const ist = id === amZugId;
-        let inhalt;
-        if (zeile.typ === 'zwischensumme') inhalt = `<span class="font-num">${summeOben(karte)}</span>`;
-        else if (zeile.typ === 'bonus') {
-          const st = bonusStand(karte, regeln);
-          inhalt = st.erreicht
-            ? `<span class="font-num" style="color:var(--good);font-weight:700;">${TEXTE.block.puffer(st.puffer)}</span>`
-            : `<span class="muted bonus-hint font-num">${TEXTE.block.nochOffen(st.fehlt)}</span>`;
-        } else {
-          inhalt = `<span class="font-num">${gesamtSumme(karte, regeln).gesamt}</span>`;
-        }
-        return `<td class="${ist ? 'aktiv' : ''} ${zeile.typ === 'gesamt' ? 'summen-row' : ''}">${inhalt}</td>`;
+        return `<div class="block-cell ${ist ? 'spalte-aktiv' : ''}">${zelleFeldInhalt(id, zeile.key, ist, karte, regeln, gueltigZiel, empf)}</div>`;
       }).join('');
-      return `<tr class="${zeile.typ === 'gesamt' ? 'summen-row' : ''}"><td class="feldname">${esc(label)}</td>${zellen}</tr>`;
+      return `<div class="feldname-cell">${esc(TEXTE.feld[zeile.key])}</div>${zellen}`;
     }
-    const key = zeile.key;
-    const zellen = AKTIV.reihenfolge.map(id => {
-      const karte = AKTIV.karten[id]; const ist = id === amZugId; const wert = karte.felder[key];
-      let inhalt;
-      if (wert !== null) {
-        inhalt = `<button class="zelle-btn font-num" data-longaction="feld-korrektur" data-id="${id}" data-feld="${key}">${wert}</button>`;
-      } else if (!ist) {
-        inhalt = `<span class="zelle-leer">–</span>`;
-      } else if (AKTIV.modus === 'schnell') {
-        inhalt = `<button class="zelle-btn zelle-leer" data-action="feld-tippen-schnell" data-feld="${key}">–</button>`;
-      } else if (!AKTIV.wuerfelEingegeben) {
-        inhalt = `<span class="zelle-leer">–</span>`;
-      } else if (gueltigZiel.includes(key)) {
-        const punkte = berechnePunkte(key, AKTIV.wuerfel, karte, regeln);
-        const hervorheben = EINSTELLUNGEN.coach && empf && empf.feldEmpfehlung === key;
-        inhalt = `<button class="zelle-btn font-num ${hervorheben ? 'zelle-empf' : ''}" data-action="feld-tippen-wuerfel" data-feld="${key}">${punkte}</button>`;
-      } else {
-        inhalt = `<span class="zelle-leer" style="opacity:.3;">–</span>`;
-      }
-      return `<td class="${ist ? 'aktiv' : ''}">${inhalt}</td>`;
-    }).join('');
-    return `<tr><td class="feldname">${esc(TEXTE.feld[key])}</td>${zellen}</tr>`;
-  }).join('');
+    if (zeile.typ === 'zwischensumme') {
+      const zellen = AKTIV.reihenfolge.map(id => `<div class="block-cell font-num ${id === amZugId ? 'spalte-aktiv' : ''}">${summeOben(AKTIV.karten[id])}</div>`).join('');
+      return `<div class="feldname-cell">${esc(TEXTE.feld.zwischensumme)}</div>${zellen}`;
+    }
+    if (zeile.typ === 'bonus') {
+      const zellen = AKTIV.reihenfolge.map(id => {
+        const st = bonusStand(AKTIV.karten[id], regeln);
+        const inhalt = st.erreicht
+          ? `<div class="bonus-zelle"><span class="bonus-erreicht font-num">+${regeln.bonusHoehe}</span>${st.puffer > 0 ? `<span class="bonus-puffer font-num">${esc(TEXTE.block.puffer(st.puffer))}</span>` : ''}</div>`
+          : `<span class="muted font-num" style="font-size:.78rem;">${esc(TEXTE.block.nochOffen(st.fehlt))}</span>`;
+        return `<div class="block-cell ${id === amZugId ? 'spalte-aktiv' : ''}">${inhalt}</div>`;
+      }).join('');
+      return `<div class="feldname-cell">${esc(TEXTE.feld.bonus)}</div>${zellen}`;
+    }
+    const zellen = AKTIV.reihenfolge.map(id => `<div class="block-cell gesamt-wert font-num ${id === amZugId ? 'spalte-aktiv' : ''}">${gesamtSumme(AKTIV.karten[id], regeln).gesamt}</div>`).join('');
+    return `<div class="feldname-cell" style="font-weight:800;">${esc(TEXTE.feld.gesamt)}</div>${zellen}`;
+  }
+
+  const baenderHtml = BLOCK_BAENDE.map(band =>
+    `<div class="block-band ${band.klasse}" style="grid-template-columns:${gridCols};">${band.zeilen.map(zeileHtml).join('')}</div>`
+  ).join('');
 
   const wuerfelPanel = AKTIV.modus !== 'wuerfel' ? '' : `
-    <div class="card stack">
+    <div class="wuerfel-panel">
       <div class="wuerfel-reihe">
         ${AKTIV.wuerfel.map((w, i) => {
           const behalten = empf && empf.behalteEmpfehlung && EINSTELLUNGEN.coach && empf.behalteEmpfehlung.mask[i];
           return `<button class="wuerfel ${behalten ? 'gehalten' : ''}" data-action="wuerfel-tippen" data-longaction="wuerfel-runter" data-index="${i}">${w}</button>`;
         }).join('')}
       </div>
-      <div class="row" style="justify-content:center;flex-wrap:wrap;">
+      <div class="row" style="justify-content:center;flex-wrap:wrap;gap:.4rem;">
         <span class="chip font-num">${esc(TEXTE.wuerfel.wurf(AKTIV.wurfNummer))}</span>
-        ${AKTIV.wurfNummer < 3 ? `<button class="btn" data-action="wuerfel-naechster-wurf">${esc(TEXTE.wuerfel.naechsterWurf)}</button>` : `<span class="chip">${esc(TEXTE.wuerfel.letzterWurf)}</span>`}
+        ${AKTIV.wurfNummer < 3 ? `<button class="btn" style="min-height:34px;padding:.4rem .8rem;font-size:.85rem;" data-action="wuerfel-naechster-wurf">${esc(TEXTE.wuerfel.naechsterWurf)}</button>` : `<span class="chip">${esc(TEXTE.wuerfel.letzterWurf)}</span>`}
       </div>
-      ${coachBoxHtml(empf)}
+      ${coachLineHtml(empf)}
     </div>`;
 
   return `
-  <div class="top">
+  <div class="top" style="padding:.5rem 1rem;">
     <button class="iconbtn" data-action="nav-start">${ICONS.zurueck}</button>
-    <h1>${esc(TEXTE.allg.amZug(spielerById(amZugId).name))}</h1>
+    <h1 style="font-size:.95rem;">${esc(TEXTE.allg.amZug(spielerById(amZugId).name))}</h1>
     <button class="iconbtn" data-action="undo" ${AKTIV.verlaufsStapel.length === 0 ? 'style="opacity:.35"' : ''}>${ICONS.undo}</button>
   </div>
-  <div class="scr" style="gap:.8rem;">
+  <div class="scr-spiel">
     <div class="modeswitch">
       <button class="${AKTIV.modus === 'schnell' ? 'aktiv' : ''}" data-action="modus-schnell">${esc(TEXTE.block.schnell)}</button>
       <button class="${AKTIV.modus === 'wuerfel' ? 'aktiv' : ''}" data-action="modus-wuerfel">${esc(TEXTE.block.wuerfel)}</button>
     </div>
     ${wuerfelPanel}
-    <div class="block-wrap">
-      <table class="block">
-        <thead><tr><th class="feldname"></th>${kopf}</tr></thead>
-        <tbody>${zeilenHtml}</tbody>
-      </table>
+    <div class="block-stack">
+      ${kopfHtml}
+      ${baenderHtml}
     </div>
   </div>`;
 };
-function coachBoxHtml(empf) {
-  if (!EINSTELLUNGEN.coach) return `<div class="coach-box aus"><span class="muted">${esc(TEXTE.wuerfel.coachAus)}</span></div>`;
+function coachLineHtml(empf) {
+  if (!EINSTELLUNGEN.coach) return `<div class="coach-line aus muted">${esc(TEXTE.wuerfel.coachAus)}</div>`;
   if (!empf) return '';
   const regeln = AKTIV.regeln, karte = aktiveKarte();
   let satz;
   if (empf.streichen) satz = TEXTE.wuerfel.streichenText(TEXTE.feld[empf.feldEmpfehlung]);
   else if (OBERE_FELDER.includes(empf.feldEmpfehlung) && !bonusStand(karte, regeln).erreicht) satz = TEXTE.wuerfel.sicherBonus(TEXTE.feld[empf.feldEmpfehlung]);
   else satz = TEXTE.wuerfel.guterWert(TEXTE.feld[empf.feldEmpfehlung]);
-  let behalteHtml = '';
+  let behalteSpan = '';
   if (empf.behalteEmpfehlung) {
     const werte = AKTIV.wuerfel.filter((_, i) => empf.behalteEmpfehlung.mask[i]);
-    behalteHtml = `<div class="muted" style="margin-top:.4rem;">${esc(TEXTE.wuerfel.empfBehalten)} <b class="font-num">${werte.length ? esc(werte.join(', ')) : '– (alle neu würfeln)'}</b></div>`;
+    behalteSpan = `<span class="muted">${esc(TEXTE.wuerfel.empfBehalten)} <b class="font-num">${werte.length ? esc(werte.join(', ')) : '– (alle neu würfeln)'}</b></span>`;
   }
-  return `<div class="coach-box"><div style="font-weight:700;">${esc(satz)}</div>${behalteHtml}</div>`;
+  return `<div class="coach-line"><b>${esc(satz)}</b>${behalteSpan}</div>`;
 }
 
 /* ---------- Spielende ---------- */
