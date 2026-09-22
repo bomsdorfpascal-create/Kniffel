@@ -95,6 +95,12 @@ button{font-family:inherit;}
   display:flex; align-items:center; gap:.35rem; font-weight:700; font-size:1rem; letter-spacing:-.01em;
   padding-left:.3rem; color:var(--text); min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
 }
+.feldname-cell-klickbar{
+  border:none; background:transparent; font-family:inherit; text-align:left; cursor:pointer;
+}
+.gesamt-chevron{ display:inline-flex; flex-shrink:0; color:var(--muted); transition:transform .18s ease; }
+.gesamt-chevron svg{ width:14px; height:14px; }
+.gesamt-chevron.zu{ transform:rotate(-90deg); }
 .feld-wuerfel-icon{ width:1.15em; height:1.15em; flex-shrink:0; color:var(--muted); }
 .spieler-kopf{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0; font-weight:700; border-radius:10px; min-width:0; }
 .spieler-kopf .em{ font-size:1.1rem; line-height:1.1; }
@@ -739,6 +745,10 @@ let LETZTES_ENDE = null;
 let NEU_AUSWAHL = [];
 let NEU_REGELN = null;
 let NEU_REGELN_PRESET = 'standard';
+// Wenn true, werden die oberen Zonen (Einser..Sechser, Zwischensumme+Bonus)
+// eingeklappt und nur noch der untere Block + die Gesamtzeile gezeigt -
+// spart Platz auf kleinen Bildschirmen, Gesamt bleibt immer sichtbar.
+let BLOCK_OBEN_EINGEKLAPPT = false;
 
 const FARB_OPTIONEN = ['#e8b93f', '#5fbf7f', '#5a9bd8', '#e2685a', '#c17ad1', '#f0955e', '#59c2c2', '#c2c2c2'];
 const EMOJI_OPTIONEN = ['🎲', '🦊', '🐼', '🐸', '🦁', '🐵', '🐧', '🦄', '🐙', '🐳', '🐺', '🦉', '👸', '🤴'];
@@ -836,6 +846,7 @@ async function eintragenSchnell(feld, wert) {
   const karte = aktiveKarte();
   karte.felder[feld] = wert;
   if (feld === 'kniffel' && wert === 50) zeigeKniffelKonfetti();
+  if (feld === 'kniffel' && wert === 0) zeigeKniffelTraenen();
   naechsterSpieler();
   await nachEintragPruefen();
 }
@@ -852,6 +863,7 @@ async function eintragenWuerfel(feld) {
   karte.felder[feld] = punkte;
   if (bonus > 0) karte.kniffelBonusAnzahl = (karte.kniffelBonusAnzahl || 0) + 1;
   if ((feld === 'kniffel' && punkte === 50) || bonus > 0) zeigeKniffelKonfetti();
+  if (feld === 'kniffel' && punkte === 0) zeigeKniffelTraenen();
   karte.wuerfeLog.push({
     wuerfel, gewaehltesFeld: feld, sofortGewaehlt: punkte,
     empfehlungsFeld: empf ? empf.feldEmpfehlung : null, sofortEmpfehlung: empf ? empf.sofortwert : null,
@@ -859,17 +871,18 @@ async function eintragenWuerfel(feld) {
   naechsterSpieler();
   await nachEintragPruefen();
 }
-// Konfetti-Explosion bei einem Kniffel: 100 🎉-Emoji fallen ueber ca. 3
-// Sekunden vom oberen Bildschirmrand nach unten aus dem Bild, mit
-// zufaelliger Startposition, Drift, Drehung und leicht versetztem Start
-// fuer einen natuerlichen "Explosions"-Effekt.
-function zeigeKniffelKonfetti() {
+// Emoji-Regen: <anzahl> Emoji fallen ueber ca. 3 Sekunden vom oberen
+// Bildschirmrand nach unten aus dem Bild, mit zufaelliger Startposition,
+// Drift, Drehung und leicht versetztem Start fuer einen natuerlichen Effekt.
+// Wird sowohl fuer die Kniffel-Konfetti-Explosion (🎉) als auch fuer den
+// "Kniffel gestrichen"-Traenenregen (😢) verwendet.
+function zeigeEmojiRegen(emoji, anzahl = 100) {
   const schicht = document.createElement('div');
   schicht.className = 'konfetti-schicht';
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < anzahl; i++) {
     const stueck = document.createElement('span');
     stueck.className = 'konfetti-stueck';
-    stueck.textContent = '🎉';
+    stueck.textContent = emoji;
     const startX = Math.random() * 100;
     const drift = (Math.random() - 0.5) * 50;
     const dauer = 2.4 + Math.random() * 0.4;
@@ -887,6 +900,8 @@ function zeigeKniffelKonfetti() {
   document.body.appendChild(schicht);
   setTimeout(() => schicht.remove(), 3300);
 }
+function zeigeKniffelKonfetti() { zeigeEmojiRegen('🎉', 100); }
+function zeigeKniffelTraenen() { zeigeEmojiRegen('😢', 100); }
 async function nachEintragPruefen() {
   const alleVoll = AKTIV.reihenfolge.every(id => karteIstVoll(AKTIV.karten[id]));
   if (alleVoll) {
@@ -1164,7 +1179,7 @@ SCREENS.spiel = function () {
         const st = bonusStand(karte, regeln);
         let inhalt;
         if (st.erreicht) {
-          inhalt = `<div class="bonus-zelle"><span class="bonus-erreicht font-num">+${regeln.bonusHoehe}</span>${st.puffer > 0 ? `<span class="bonus-puffer font-num">${esc(TEXTE.block.puffer(st.puffer))}</span>` : ''}</div>`;
+          inhalt = `<div class="bonus-zelle"><span class="bonus-erreicht font-num">+${regeln.bonusHoehe}</span></div>`;
         } else if (alleObereGefuellt(karte)) {
           inhalt = `<span class="muted font-num" style="font-size:.9rem;">0</span>`;
         } else {
@@ -1175,12 +1190,14 @@ SCREENS.spiel = function () {
       return `<div class="feldname-cell">${esc(TEXTE.feld.bonus)}</div>${zellen}`;
     }
     const zellen = AKTIV.reihenfolge.map(id => `<div class="block-cell gesamt-wert font-num ${id === amZugId ? 'spalte-aktiv' : ''}">${gesamtSumme(AKTIV.karten[id], regeln).gesamt}</div>`).join('');
-    return `<div class="feldname-cell" style="font-weight:800;">${esc(TEXTE.feld.gesamt)}</div>${zellen}`;
+    return `<button class="feldname-cell feldname-cell-klickbar" style="font-weight:800;" data-action="block-oben-toggle" aria-expanded="${!BLOCK_OBEN_EINGEKLAPPT}">${esc(TEXTE.feld.gesamt)}<span class="gesamt-chevron ${BLOCK_OBEN_EINGEKLAPPT ? 'zu' : ''}">${ICONS.down}</span></button>${zellen}`;
   }
 
-  const baenderHtml = BLOCK_BAENDE.map(band =>
-    `<div class="block-band ${band.klasse}" style="grid-template-columns:${gridCols};">${band.zeilen.map(zeileHtml).join('')}</div>`
-  ).join('');
+  const baenderHtml = BLOCK_BAENDE.map(band => {
+    const eingeklappt = BLOCK_OBEN_EINGEKLAPPT && (band.klasse === 'band-oben' || band.klasse === 'band-mitte');
+    if (eingeklappt) return '';
+    return `<div class="block-band ${band.klasse}" style="grid-template-columns:${gridCols};">${band.zeilen.map(zeileHtml).join('')}</div>`;
+  }).join('');
 
   const wuerfelPanel = AKTIV.modus !== 'wuerfel' ? '' : `
     <div class="wuerfel-panel">
@@ -1684,6 +1701,7 @@ async function handleAction(action, el) {
     case 'coach-angebot-nein': EINSTELLUNGEN.coachGefragt = true; await speichereEinstellungen(); schliesseOverlay(); break;
 
     case 'undo': await undoSchritt(); break;
+    case 'block-oben-toggle': BLOCK_OBEN_EINGEKLAPPT = !BLOCK_OBEN_EINGEKLAPPT; render(); haptic(); break;
     case 'modus-schnell': AKTIV.modus = 'schnell'; await speichereAktiv(); render(); break;
     case 'modus-wuerfel': AKTIV.modus = 'wuerfel'; await speichereAktiv(); render(); break;
 
